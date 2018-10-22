@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CF8500FDF4B41B800262BDC /* Pods_Social_Networking_for_Animals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
 		2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB0B217757AB00B62E3E /* ViewController.swift */; };
 		2F54EB0F217757AB00B62E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB0D217757AB00B62E3E /* Main.storyboard */; };
 		2F54EB12217757AB00B62E3E /* Social_Networking_for_Animals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB10217757AB00B62E3E /* Social_Networking_for_Animals.xcdatamodeld */; };
 		2F54EB14217757AE00B62E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB13217757AE00B62E3E /* Assets.xcassets */; };
 		2F54EB17217757AE00B62E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB15217757AE00B62E3E /* LaunchScreen.storyboard */; };
+		2F54EB23217762E900B62E3E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB22217762E900B62E3E /* IntroViewController.swift */; };
+		2F54EB26217772B200B62E3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB25217772B200B62E3E /* LoginViewController.swift */; };
+		2F54EB2D2178ADA700B62E3E /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB2C2178ADA700B62E3E /* TakePictureViewController.swift */; };
+		2F54EB2F2178B06B00B62E3E /* CameraHanndler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB2E2178B06B00B62E3E /* CameraHanndler.swift */; };
+		2F54EB3221792B9400B62E3E /* UpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB3021792B9400B62E3E /* UpCollectionViewCell.swift */; };
+		2F54EB3321792B9400B62E3E /* UpCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB3121792B9400B62E3E /* UpCollectionViewCell.xib */; };
+		2F54EB3521792E0E00B62E3E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB3421792E0E00B62E3E /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.debug.xcconfig"; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F54EB09217757AB00B62E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F54EB0B217757AB00B62E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,15 @@
 		2F54EB13217757AE00B62E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F54EB16217757AE00B62E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F54EB18217757AE00B62E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F54EB22217762E900B62E3E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		2F54EB25217772B200B62E3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2F54EB2C2178ADA700B62E3E /* TakePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
+		2F54EB2E2178B06B00B62E3E /* CameraHanndler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHanndler.swift; sourceTree = "<group>"; };
+		2F54EB3021792B9400B62E3E /* UpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F54EB3121792B9400B62E3E /* UpCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F54EB3421792E0E00B62E3E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		44CF88BAB41A6A7437799F09 /* Pods-Social Networking for Animals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.release.xcconfig"; sourceTree = "<group>"; };
+		C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Networking_for_Animals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF8500FDF4B41B800262BDC /* Pods_Social_Networking_for_Animals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +61,8 @@
 			children = (
 				2F54EB08217757AB00B62E3E /* Social Networking for Animals */,
 				2F54EB07217757AB00B62E3E /* Products */,
+				F0A95C5945C2F997A6027313 /* Pods */,
+				582280BB83A83E5DF2B2A49E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +77,9 @@
 		2F54EB08217757AB00B62E3E /* Social Networking for Animals */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EB20217757FD00B62E3E /* Tables and Collections Controllers */,
+				2F54EB1F217757EC00B62E3E /* Funcionalities */,
+				2F54EB1E217757D700B62E3E /* Model */,
 				2F54EB09217757AB00B62E3E /* AppDelegate.swift */,
 				2F54EB0B217757AB00B62E3E /* ViewController.swift */,
 				2F54EB0D217757AB00B62E3E /* Main.storyboard */,
@@ -67,6 +91,107 @@
 			path = "Social Networking for Animals";
 			sourceTree = "<group>";
 		};
+		2F54EB1E217757D700B62E3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EB2E2178B06B00B62E3E /* CameraHanndler.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F54EB1F217757EC00B62E3E /* Funcionalities */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EB2B2178AD7100B62E3E /* Notification */,
+				2F54EB2A2178AD6900B62E3E /* Picture */,
+				2F54EB292178AD5D00B62E3E /* Search */,
+				2F54EB282178AD5300B62E3E /* Feed */,
+				2F54EB272178AD4A00B62E3E /* Perfil */,
+				2F54EB24217771D500B62E3E /* Login */,
+				2F54EB21217762B500B62E3E /* Intro */,
+			);
+			path = Funcionalities;
+			sourceTree = "<group>";
+		};
+		2F54EB20217757FD00B62E3E /* Tables and Collections Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tables and Collections Controllers";
+			sourceTree = "<group>";
+		};
+		2F54EB21217762B500B62E3E /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EB22217762E900B62E3E /* IntroViewController.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		2F54EB24217771D500B62E3E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EB25217772B200B62E3E /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2F54EB272178AD4A00B62E3E /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
+		2F54EB282178AD5300B62E3E /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		2F54EB292178AD5D00B62E3E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EB3021792B9400B62E3E /* UpCollectionViewCell.swift */,
+				2F54EB3121792B9400B62E3E /* UpCollectionViewCell.xib */,
+				2F54EB3421792E0E00B62E3E /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2F54EB2A2178AD6900B62E3E /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EB2C2178ADA700B62E3E /* TakePictureViewController.swift */,
+			);
+			path = Picture;
+			sourceTree = "<group>";
+		};
+		2F54EB2B2178AD7100B62E3E /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		582280BB83A83E5DF2B2A49E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0A95C5945C2F997A6027313 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */,
+				44CF88BAB41A6A7437799F09 /* Pods-Social Networking for Animals.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F54EB1B217757AE00B62E3E /* Build configuration list for PBXNativeTarget "Social Networking for Animals" */;
 			buildPhases = (
+				A09D6FEDCE95A9AE126AF510 /* [CP] Check Pods Manifest.lock */,
 				2F54EB02217757AB00B62E3E /* Sources */,
 				2F54EB03217757AB00B62E3E /* Frameworks */,
 				2F54EB04217757AB00B62E3E /* Resources */,
+				41EF3F2F3A7C695BE4C459B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F54EB17217757AE00B62E3E /* LaunchScreen.storyboard in Resources */,
+				2F54EB3321792B9400B62E3E /* UpCollectionViewCell.xib in Resources */,
 				2F54EB14217757AE00B62E3E /* Assets.xcassets in Resources */,
 				2F54EB0F217757AB00B62E3E /* Main.storyboard in Resources */,
 			);
@@ -133,14 +261,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41EF3F2F3A7C695BE4C459B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A09D6FEDCE95A9AE126AF510 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Social Networking for Animals-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2F54EB02217757AB00B62E3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F54EB2D2178ADA700B62E3E /* TakePictureViewController.swift in Sources */,
+				2F54EB3221792B9400B62E3E /* UpCollectionViewCell.swift in Sources */,
 				2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */,
+				2F54EB3521792E0E00B62E3E /* SearchViewController.swift in Sources */,
 				2F54EB12217757AB00B62E3E /* Social_Networking_for_Animals.xcdatamodeld in Sources */,
 				2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */,
+				2F54EB26217772B200B62E3E /* LoginViewController.swift in Sources */,
+				2F54EB2F2178B06B00B62E3E /* CameraHanndler.swift in Sources */,
+				2F54EB23217762E900B62E3E /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,11 +471,13 @@
 		};
 		2F54EB1C217757AE00B62E3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ922JMCL6;
 				INFOPLIST_FILE = "Social Networking for Animals/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +491,13 @@
 		};
 		2F54EB1D217757AE00B62E3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44CF88BAB41A6A7437799F09 /* Pods-Social Networking for Animals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ922JMCL6;
 				INFOPLIST_FILE = "Social Networking for Animals/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
