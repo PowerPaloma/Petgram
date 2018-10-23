@@ -10,17 +10,33 @@ import UIKit
 import CoreData
 import FBSDKCoreKit
 
+var animals: [Animal] = []
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
+//        FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
+
+        loadResouces()
 
         // Override point for customization after application launch.
         return true
+    }
+    
+    func loadResouces(){
+        let animalsResouces = ["Dog", "Cat", "Fox", "Bird"]
+        for name in animalsResouces {
+            var animal = Animal()
+            animal.name = name
+            animal.image = UIImage(named: name)
+            animals.append(animal)
+        }
     }
     
     

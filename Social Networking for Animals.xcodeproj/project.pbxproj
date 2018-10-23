@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0CF8500FDF4B41B800262BDC /* Pods_Social_Networking_for_Animals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */; };
+		2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC69217DF08E00CA1164 /* APIManager.swift */; };
+		2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC6B217DF0E600CA1164 /* Estruturas.swift */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
 		2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB0B217757AB00B62E3E /* ViewController.swift */; };
 		2F54EB0F217757AB00B62E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB0D217757AB00B62E3E /* Main.storyboard */; };
@@ -18,13 +20,19 @@
 		2F54EB26217772B200B62E3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB25217772B200B62E3E /* LoginViewController.swift */; };
 		2F54EB2D2178ADA700B62E3E /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB2C2178ADA700B62E3E /* TakePictureViewController.swift */; };
 		2F54EB2F2178B06B00B62E3E /* CameraHanndler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB2E2178B06B00B62E3E /* CameraHanndler.swift */; };
-		2F54EB3221792B9400B62E3E /* UpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB3021792B9400B62E3E /* UpCollectionViewCell.swift */; };
-		2F54EB3321792B9400B62E3E /* UpCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB3121792B9400B62E3E /* UpCollectionViewCell.xib */; };
+		2F54EB3221792B9400B62E3E /* TopShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB3021792B9400B62E3E /* TopShelfCollectionViewCell.swift */; };
+		2F54EB3321792B9400B62E3E /* TopShelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB3121792B9400B62E3E /* TopShelfCollectionViewCell.xib */; };
 		2F54EB3521792E0E00B62E3E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB3421792E0E00B62E3E /* SearchViewController.swift */; };
+		2FB31218217E52230004F9A4 /* TopShelfCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31217217E52230004F9A4 /* TopShelfCollection.swift */; };
+		2FB3121A217E53820004F9A4 /* bottonCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31219217E53820004F9A4 /* bottonCollection.swift */; };
+		2FB3121D217E5B6E0004F9A4 /* BottonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */; };
+		2FB3121E217E5B6E0004F9A4 /* BottonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.debug.xcconfig"; sourceTree = "<group>"; };
+		2F36AC69217DF08E00CA1164 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		2F36AC6B217DF0E600CA1164 /* Estruturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estruturas.swift; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F54EB09217757AB00B62E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F54EB0B217757AB00B62E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,9 +45,13 @@
 		2F54EB25217772B200B62E3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2F54EB2C2178ADA700B62E3E /* TakePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		2F54EB2E2178B06B00B62E3E /* CameraHanndler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHanndler.swift; sourceTree = "<group>"; };
-		2F54EB3021792B9400B62E3E /* UpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpCollectionViewCell.swift; sourceTree = "<group>"; };
-		2F54EB3121792B9400B62E3E /* UpCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F54EB3021792B9400B62E3E /* TopShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShelfCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F54EB3121792B9400B62E3E /* TopShelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopShelfCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F54EB3421792E0E00B62E3E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2FB31217217E52230004F9A4 /* TopShelfCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShelfCollection.swift; sourceTree = "<group>"; };
+		2FB31219217E53820004F9A4 /* bottonCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottonCollection.swift; sourceTree = "<group>"; };
+		2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottonCollectionViewCell.swift; sourceTree = "<group>"; };
+		2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottonCollectionViewCell.xib; sourceTree = "<group>"; };
 		44CF88BAB41A6A7437799F09 /* Pods-Social Networking for Animals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.release.xcconfig"; sourceTree = "<group>"; };
 		C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Networking_for_Animals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				2F54EB2E2178B06B00B62E3E /* CameraHanndler.swift */,
+				2F36AC69217DF08E00CA1164 /* APIManager.swift */,
+				2F36AC6B217DF0E600CA1164 /* Estruturas.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,9 +167,13 @@
 		2F54EB292178AD5D00B62E3E /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				2F54EB3021792B9400B62E3E /* UpCollectionViewCell.swift */,
-				2F54EB3121792B9400B62E3E /* UpCollectionViewCell.xib */,
+				2FB31217217E52230004F9A4 /* TopShelfCollection.swift */,
+				2F54EB3021792B9400B62E3E /* TopShelfCollectionViewCell.swift */,
+				2F54EB3121792B9400B62E3E /* TopShelfCollectionViewCell.xib */,
 				2F54EB3421792E0E00B62E3E /* SearchViewController.swift */,
+				2FB31219217E53820004F9A4 /* bottonCollection.swift */,
+				2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */,
+				2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -253,7 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F54EB17217757AE00B62E3E /* LaunchScreen.storyboard in Resources */,
-				2F54EB3321792B9400B62E3E /* UpCollectionViewCell.xib in Resources */,
+				2F54EB3321792B9400B62E3E /* TopShelfCollectionViewCell.xib in Resources */,
+				2FB3121E217E5B6E0004F9A4 /* BottonCollectionViewCell.xib in Resources */,
 				2F54EB14217757AE00B62E3E /* Assets.xcassets in Resources */,
 				2F54EB0F217757AB00B62E3E /* Main.storyboard in Resources */,
 			);
@@ -320,14 +339,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F54EB2D2178ADA700B62E3E /* TakePictureViewController.swift in Sources */,
-				2F54EB3221792B9400B62E3E /* UpCollectionViewCell.swift in Sources */,
+				2FB3121A217E53820004F9A4 /* bottonCollection.swift in Sources */,
+				2F54EB3221792B9400B62E3E /* TopShelfCollectionViewCell.swift in Sources */,
+				2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */,
 				2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */,
+				2FB31218217E52230004F9A4 /* TopShelfCollection.swift in Sources */,
 				2F54EB3521792E0E00B62E3E /* SearchViewController.swift in Sources */,
 				2F54EB12217757AB00B62E3E /* Social_Networking_for_Animals.xcdatamodeld in Sources */,
 				2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */,
 				2F54EB26217772B200B62E3E /* LoginViewController.swift in Sources */,
 				2F54EB2F2178B06B00B62E3E /* CameraHanndler.swift in Sources */,
 				2F54EB23217762E900B62E3E /* IntroViewController.swift in Sources */,
+				2FB3121D217E5B6E0004F9A4 /* BottonCollectionViewCell.swift in Sources */,
+				2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

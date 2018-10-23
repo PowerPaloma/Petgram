@@ -10,15 +10,28 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewTopShelf: UICollectionView!
     
+    var topShelf: TopShelfCollection!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-
-        // Do any additional setup after loading the view.
+        topShelf = TopShelfCollection()
+        //let bottonCollection = BottonCollectionViewCell()
+        self.collectionViewTopShelf.register(UINib(nibName: "TopShelfCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellUp")
+        self.collectionViewTopShelf.delegate = topShelf
+        self.collectionViewTopShelf.dataSource = topShelf
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.collectionViewTopShelf.reloadData()
+    }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        collectionViewTopShelf.collectionViewLayout.invalidateLay
+//    }
     
 
     /*
@@ -33,14 +46,3 @@ class SearchViewController: UIViewController {
 
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-    
-    
-}
