@@ -9,36 +9,60 @@
 import UIKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController {
     
 
+    @IBOutlet weak var getStartedButton: UIButton!
+    @IBOutlet weak var password: CustomTextField!
     @IBOutlet weak var btnFBLogin: FBSDKLoginButton!
-    
+    @IBOutlet weak var username: CustomTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnFBLogin.delegate = self
+        setupLayout()
         
-        btnFBLogin.readPermissions = ["public_profile", "email"]
+//        btnFBLogin.delegate = self
+//
+//        btnFBLogin.readPermissions = ["public_profile", "email"]
         
 
         // Do any additional setup after loading the view.
     }
     
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if error != nil {
-            print(error.localizedDescription)
-        }else if result.isCancelled {
-            print("canceled")
-        }else{
-            print("logei *_*")
-        }
+    func setupLayout(){
+        getStartedButton.clipsToBounds = true
+        getStartedButton.layer.cornerRadius = 25
+        username.roundCorners(corners: .allCorners, radius: 15)
+        password.roundCorners(corners: .allCorners, radius: 15)
+        password.image = UIImage(named: "pass")
+        username.image = UIImage(named: "user")
+        password.setupImageView()
+        username.setupImageView()
+        
     }
     
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("logout")
-    }
-    
+//    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//        if error != nil {
+//            print(error.localizedDescription)
+//        }else if result.isCancelled {
+//            print("canceled")
+//        }else{
+//            print("logei *_*")
+//        }
+//    }
+//
+//    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+//        print("logout")
+//    }
+//
 
+    @IBAction func getStarted(_ sender: Any) {
+        
+        
+    }
+    
+    @IBAction func createAccount(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 

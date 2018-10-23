@@ -8,7 +8,7 @@
 
 import UIKit
 
-class bottonCollection: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class BottomCollection: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
     let minimumInteritemSpacing: CGFloat = 10
@@ -21,8 +21,14 @@ class bottonCollection: NSObject, UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellBottom", for: indexPath) as! BottonCollectionViewCell
 
-        cell.
-
+        APIManager.getRandonCat { (error, image) in
+            print("apiManager")
+            DispatchQueue.main.async {
+                cell.image.image = image
+                print("dispa")
+            }
+        }
+        print("return")
         return cell
     }
 

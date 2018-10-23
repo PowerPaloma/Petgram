@@ -24,9 +24,10 @@
 		2F54EB3321792B9400B62E3E /* TopShelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F54EB3121792B9400B62E3E /* TopShelfCollectionViewCell.xib */; };
 		2F54EB3521792E0E00B62E3E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB3421792E0E00B62E3E /* SearchViewController.swift */; };
 		2FB31218217E52230004F9A4 /* TopShelfCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31217217E52230004F9A4 /* TopShelfCollection.swift */; };
-		2FB3121A217E53820004F9A4 /* bottonCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31219217E53820004F9A4 /* bottonCollection.swift */; };
+		2FB3121A217E53820004F9A4 /* BottomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31219217E53820004F9A4 /* BottomCollection.swift */; };
 		2FB3121D217E5B6E0004F9A4 /* BottonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */; };
 		2FB3121E217E5B6E0004F9A4 /* BottonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */; };
+		2FB31222217F594E0004F9A4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31221217F594E0004F9A4 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +50,10 @@
 		2F54EB3121792B9400B62E3E /* TopShelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopShelfCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F54EB3421792E0E00B62E3E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2FB31217217E52230004F9A4 /* TopShelfCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShelfCollection.swift; sourceTree = "<group>"; };
-		2FB31219217E53820004F9A4 /* bottonCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottonCollection.swift; sourceTree = "<group>"; };
+		2FB31219217E53820004F9A4 /* BottomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCollection.swift; sourceTree = "<group>"; };
 		2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottonCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottonCollectionViewCell.xib; sourceTree = "<group>"; };
+		2FB31221217F594E0004F9A4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		44CF88BAB41A6A7437799F09 /* Pods-Social Networking for Animals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.release.xcconfig"; sourceTree = "<group>"; };
 		C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Networking_for_Animals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				2F54EB25217772B200B62E3E /* LoginViewController.swift */,
+				2FB31221217F594E0004F9A4 /* CustomTextField.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -171,7 +174,7 @@
 				2F54EB3021792B9400B62E3E /* TopShelfCollectionViewCell.swift */,
 				2F54EB3121792B9400B62E3E /* TopShelfCollectionViewCell.xib */,
 				2F54EB3421792E0E00B62E3E /* SearchViewController.swift */,
-				2FB31219217E53820004F9A4 /* bottonCollection.swift */,
+				2FB31219217E53820004F9A4 /* BottomCollection.swift */,
 				2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */,
 				2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */,
 			);
@@ -339,7 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F54EB2D2178ADA700B62E3E /* TakePictureViewController.swift in Sources */,
-				2FB3121A217E53820004F9A4 /* bottonCollection.swift in Sources */,
+				2FB3121A217E53820004F9A4 /* BottomCollection.swift in Sources */,
 				2F54EB3221792B9400B62E3E /* TopShelfCollectionViewCell.swift in Sources */,
 				2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */,
 				2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */,
@@ -352,6 +355,7 @@
 				2F54EB23217762E900B62E3E /* IntroViewController.swift in Sources */,
 				2FB3121D217E5B6E0004F9A4 /* BottonCollectionViewCell.swift in Sources */,
 				2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */,
+				2FB31222217F594E0004F9A4 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,21 +11,30 @@ import UIKit
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var collectionViewTopShelf: UICollectionView!
+    @IBOutlet weak var collectionViewBottom: UICollectionView!
     
     var topShelf: TopShelfCollection!
-        
+    var bottomCollection: BottomCollection!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         topShelf = TopShelfCollection()
-        //let bottonCollection = BottonCollectionViewCell()
+        bottomCollection = BottomCollection()
+        
+        self.collectionViewBottom.register(UINib(nibName: "BottonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellBottom")
         self.collectionViewTopShelf.register(UINib(nibName: "TopShelfCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellUp")
+        
         self.collectionViewTopShelf.delegate = topShelf
         self.collectionViewTopShelf.dataSource = topShelf
+        
+        self.collectionViewBottom.delegate = bottomCollection
+        self.collectionViewBottom.dataSource = bottomCollection
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.collectionViewTopShelf.reloadData()
+        self.collectionViewBottom.reloadData()
     }
     
 //    override func viewDidLayoutSubviews() {
