@@ -23,14 +23,11 @@ class LoginViewController: UIViewController {
 //        btnFBLogin.delegate = self
 //
 //        btnFBLogin.readPermissions = ["public_profile", "email"]
-        
-
-        // Do any additional setup after loading the view.
     }
     
     func setupLayout(){
         getStartedButton.clipsToBounds = true
-        getStartedButton.layer.cornerRadius = 25
+        getStartedButton.layer.cornerRadius = 22
         username.roundCorners(corners: .allCorners, radius: 15)
         password.roundCorners(corners: .allCorners, radius: 15)
         password.image = UIImage(named: "pass")
