@@ -137,6 +137,49 @@ class APIManager: NSObject {
             }
             }.resume()
     }
+    
+    static func validate(emailAddress email: String, completion: @escaping (Error?, Bool?, String?) -> Void) {
+        
+        
+        let urlString = "https://apilayer.net/api/check?access_key=be95a2c215d4c5e3de2ee79d8322034e&email=\(email)&smtp=1&format=1"
+        guard let url = URL(string: urlString) else {return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response
+            , error) in
+            if error != nil {
+                print("eror")
+                completion(error, false, nil)
+            }
+            guard let data = data else {
+                print("error in data")
+                completion(error, false, nil)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let model = try decoder.decode(EmailValidate.self, from:data)
+                guard let mxFound = model.mxFound else{
+                    completion(nil, false, nil)
+                    return
+                }
+                guard let isValid = model.formatValid else {
+                    completion(nil, false, nil)
+                    return
+                }
+                if  isValid && mxFound{
+                    print("ok valid")
+                    completion(nil, true, nil)
+                }else{
+                    print("ok invalid")
+                    completion(nil, false, model.didYouMean)
+                }
+            } catch let err {
+                print("error catch", err.localizedDescription)
+                completion(err, false, nil)
+            }
+            }.resume()
+        
+    }
 
 
 }
