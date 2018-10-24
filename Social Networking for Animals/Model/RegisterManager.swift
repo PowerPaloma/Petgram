@@ -22,19 +22,15 @@ class RegisterManager {
     static func validateEmail(email: String, completion: @escaping (Error?, Bool, String?) -> Void){
         APIManager.validate(emailAddress: email) { (error, isValid, emailSuggestion) in
             if !(error == nil){
-                print("eror")
                 completion(error, false, nil)
             }
             guard let isValid = isValid else {
-                print("eror")
                 completion(error, false, nil)
                 return
             }
             if isValid {
-                print("ok RegisterManager")
                 completion(nil, true, nil)
             }else{
-                print("not ok RegisterManager")
                 completion(nil, false, emailSuggestion)
             }
         }

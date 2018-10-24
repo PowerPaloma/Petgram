@@ -12,7 +12,7 @@ import CoreData
 class LoginManager: NSObject {
     
     static func isValid(email: String, password: String)-> (success: Bool, object: NSManagedObject?){
-        let predicate = NSPredicate(format: "email == %@  AND password == %@", email, password)
+        let predicate = NSPredicate(format: "username == %@  AND password == %@", email, password)
         let result = DataManager.executeThe(query: predicate, forEntityName: "User") as! [User]
         
         if result.isEmpty {

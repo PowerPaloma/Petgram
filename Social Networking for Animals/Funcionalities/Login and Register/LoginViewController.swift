@@ -74,6 +74,12 @@ class LoginViewController: UIViewController {
         scView.scrollIndicatorInsets = contentInsets
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dest = segue.destination as? FeedViewController else {return}
+        
+        dest.user = user ?? nil
+    }
+    
     
 //    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 //        if error != nil {
@@ -89,7 +95,6 @@ class LoginViewController: UIViewController {
 //        print("logout")
 //    }
 //
-
     @IBAction func getStarted(_ sender: Any) {
         if !RegisterManager.checkTextFieldIsEmpty(textFields: [self.password, self.username]) {
             guard let username = self.username.text, let password = self.password.text else {
@@ -100,7 +105,7 @@ class LoginViewController: UIViewController {
             let result = LoginManager.isValid(email: username, password: password)
             if result.success{
                 user = result.object as? User
-                _ = self.navigationController?.popViewController(animated: true)
+                self.performSegue(withIdentifier: "goTo", sender: nil)
             }else{
                 let alert = UIAlertController(title: "Incorrect username or password", message: nil, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)

@@ -82,7 +82,10 @@ class RegisterAccountViewController: UIViewController {
         }
     }
     
-    //Not testable
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dest = segue.destination as? FeedViewController else {return}
+        dest.user = newUser ?? nil
+    }
     
     @objc func keyboardWillHide(notif: Notification){
         let contentInsets = NSCoder.uiEdgeInsets(for: "")
@@ -115,7 +118,6 @@ class RegisterAccountViewController: UIViewController {
                 if !(error == nil){
                     return
                 }
-                print(isValid, "requestViewonbtroler")
                 if isValid {
                     DispatchQueue.main.async {
                         self.invalidEmail.isHidden = true
@@ -134,9 +136,6 @@ class RegisterAccountViewController: UIViewController {
                     self.newUser.email = email
                     self.newUser.password = password
                     self.newUser.username = username
-                    
-                    
-                    
                     DataManager.saveContext()
                     let alert = UIAlertController(title: "Cadastrado com sucesso!", message: nil, preferredStyle: .alert)
                     DispatchQueue.main.async {
@@ -148,14 +147,13 @@ class RegisterAccountViewController: UIViewController {
                     }
                 }else{
                     DispatchQueue.main.async {
-                        print("invalid")
                         self.invalidEmail.isHidden = false
                         self.invalidEmail.shake()
                     }
                     
                 }
             }
-            
+            self.performSegue(withIdentifier: "registerTo", sender: nil)
         }
     }
     @IBAction func close(_ sender: Any) {

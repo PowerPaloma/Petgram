@@ -113,7 +113,6 @@ class APIManager: NSObject {
                 completion(error, nil)
             }
             guard let data = data else {
-                print("invalid data")
                 return }
             
             do {
@@ -147,11 +146,9 @@ class APIManager: NSObject {
         URLSession.shared.dataTask(with: url) { (data, response
             , error) in
             if error != nil {
-                print("eror")
                 completion(error, false, nil)
             }
             guard let data = data else {
-                print("error in data")
                 completion(error, false, nil)
                 return
             }
@@ -167,14 +164,11 @@ class APIManager: NSObject {
                     return
                 }
                 if  isValid && mxFound{
-                    print("ok valid")
                     completion(nil, true, nil)
                 }else{
-                    print("ok invalid")
                     completion(nil, false, model.didYouMean)
                 }
             } catch let err {
-                print("error catch", err.localizedDescription)
                 completion(err, false, nil)
             }
             }.resume()

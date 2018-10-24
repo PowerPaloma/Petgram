@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0CF8500FDF4B41B800262BDC /* Pods_Social_Networking_for_Animals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */; };
 		2F19AA75217FBBC30071C459 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA74217FBBC30071C459 /* StoreManager.swift */; };
+		2F19AA772180DA880071C459 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA762180DA880071C459 /* FeedViewController.swift */; };
 		2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC69217DF08E00CA1164 /* APIManager.swift */; };
 		2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC6B217DF0E600CA1164 /* Estruturas.swift */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.debug.xcconfig"; sourceTree = "<group>"; };
 		2F19AA74217FBBC30071C459 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		2F19AA762180DA880071C459 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		2F36AC69217DF08E00CA1164 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2F36AC6B217DF0E600CA1164 /* Estruturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estruturas.swift; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 		2F54EB282178AD5300B62E3E /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				2F19AA762180DA880071C459 /* FeedViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				2F54EB12217757AB00B62E3E /* Social_Networking_for_Animals.xcdatamodeld in Sources */,
 				2FB31226217F94610004F9A4 /* DataManager.swift in Sources */,
 				2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */,
+				2F19AA772180DA880071C459 /* FeedViewController.swift in Sources */,
 				2F54EB26217772B200B62E3E /* LoginViewController.swift in Sources */,
 				2F54EB2F2178B06B00B62E3E /* CameraHanndler.swift in Sources */,
 				2F54EB23217762E900B62E3E /* IntroViewController.swift in Sources */,
