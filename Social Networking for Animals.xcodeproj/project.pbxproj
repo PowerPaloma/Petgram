@@ -10,6 +10,11 @@
 		0CF8500FDF4B41B800262BDC /* Pods_Social_Networking_for_Animals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */; };
 		2F19AA75217FBBC30071C459 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA74217FBBC30071C459 /* StoreManager.swift */; };
 		2F19AA772180DA880071C459 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA762180DA880071C459 /* FeedViewController.swift */; };
+		2F19AA7C218101940071C459 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA7A218101940071C459 /* FeedCollectionViewCell.swift */; };
+		2F19AA7D218101940071C459 /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F19AA7B218101940071C459 /* FeedCollectionViewCell.xib */; };
+		2F19AA7F218231ED0071C459 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA7E218231ED0071C459 /* PetsViewController.swift */; };
+		2F19AA822182320C0071C459 /* PetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */; };
+		2F19AA832182320C0071C459 /* PetsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */; };
 		2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC69217DF08E00CA1164 /* APIManager.swift */; };
 		2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC6B217DF0E600CA1164 /* Estruturas.swift */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
@@ -40,6 +45,11 @@
 		121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.debug.xcconfig"; sourceTree = "<group>"; };
 		2F19AA74217FBBC30071C459 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		2F19AA762180DA880071C459 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2F19AA7A218101940071C459 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F19AA7B218101940071C459 /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F19AA7E218231ED0071C459 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
+		2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetsCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F36AC69217DF08E00CA1164 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2F36AC6B217DF0E600CA1164 /* Estruturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estruturas.swift; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +144,7 @@
 		2F54EB1F217757EC00B62E3E /* Funcionalities */ = {
 			isa = PBXGroup;
 			children = (
-				2F54EB2B2178AD7100B62E3E /* Notification */,
+				2F54EB2B2178AD7100B62E3E /* Pets */,
 				2F54EB2A2178AD6900B62E3E /* Picture */,
 				2F54EB292178AD5D00B62E3E /* Search */,
 				2F54EB282178AD5300B62E3E /* Feed */,
@@ -181,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				2F19AA762180DA880071C459 /* FeedViewController.swift */,
+				2F19AA7A218101940071C459 /* FeedCollectionViewCell.swift */,
+				2F19AA7B218101940071C459 /* FeedCollectionViewCell.xib */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -207,11 +219,14 @@
 			path = Picture;
 			sourceTree = "<group>";
 		};
-		2F54EB2B2178AD7100B62E3E /* Notification */ = {
+		2F54EB2B2178AD7100B62E3E /* Pets */ = {
 			isa = PBXGroup;
 			children = (
+				2F19AA7E218231ED0071C459 /* PetsViewController.swift */,
+				2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */,
+				2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */,
 			);
-			path = Notification;
+			path = Pets;
 			sourceTree = "<group>";
 		};
 		582280BB83A83E5DF2B2A49E /* Frameworks */ = {
@@ -294,7 +309,9 @@
 				2F54EB17217757AE00B62E3E /* LaunchScreen.storyboard in Resources */,
 				2F54EB3321792B9400B62E3E /* TopShelfCollectionViewCell.xib in Resources */,
 				2FB3121E217E5B6E0004F9A4 /* BottonCollectionViewCell.xib in Resources */,
+				2F19AA832182320C0071C459 /* PetsCollectionViewCell.xib in Resources */,
 				2F54EB14217757AE00B62E3E /* Assets.xcassets in Resources */,
+				2F19AA7D218101940071C459 /* FeedCollectionViewCell.xib in Resources */,
 				2F54EB0F217757AB00B62E3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,12 +378,15 @@
 			files = (
 				2F54EB2D2178ADA700B62E3E /* TakePictureViewController.swift in Sources */,
 				2FB3122A217F976C0004F9A4 /* RegisterAccountViewController.swift in Sources */,
+				2F19AA7C218101940071C459 /* FeedCollectionViewCell.swift in Sources */,
 				2FB31224217F93F60004F9A4 /* LoginManager.swift in Sources */,
 				2FB3121A217E53820004F9A4 /* BottomCollection.swift in Sources */,
 				2F54EB3221792B9400B62E3E /* TopShelfCollectionViewCell.swift in Sources */,
 				2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */,
+				2F19AA7F218231ED0071C459 /* PetsViewController.swift in Sources */,
 				2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */,
 				2FB31228217F959C0004F9A4 /* RegisterManager.swift in Sources */,
+				2F19AA822182320C0071C459 /* PetsCollectionViewCell.swift in Sources */,
 				2FB31218217E52230004F9A4 /* TopShelfCollection.swift in Sources */,
 				2F54EB3521792E0E00B62E3E /* SearchViewController.swift in Sources */,
 				2F54EB12217757AB00B62E3E /* Social_Networking_for_Animals.xcdatamodeld in Sources */,

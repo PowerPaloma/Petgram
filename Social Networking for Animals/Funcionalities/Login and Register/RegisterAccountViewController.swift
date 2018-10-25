@@ -137,14 +137,9 @@ class RegisterAccountViewController: UIViewController {
                     self.newUser.password = password
                     self.newUser.username = username
                     DataManager.saveContext()
-                    let alert = UIAlertController(title: "Cadastrado com sucesso!", message: nil, preferredStyle: .alert)
-                    DispatchQueue.main.async {
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                        let when = DispatchTime.now() + 3
-                        DispatchQueue.main.asyncAfter(deadline: when){
-                            alert.dismiss(animated: true, completion: nil)
-                    }
+                    
+                    self.performSegue(withIdentifier: "registerTo", sender: nil)
+                    
                 }else{
                     DispatchQueue.main.async {
                         self.invalidEmail.isHidden = false
@@ -153,7 +148,7 @@ class RegisterAccountViewController: UIViewController {
                     
                 }
             }
-            self.performSegue(withIdentifier: "registerTo", sender: nil)
+            
         }
     }
     @IBAction func close(_ sender: Any) {

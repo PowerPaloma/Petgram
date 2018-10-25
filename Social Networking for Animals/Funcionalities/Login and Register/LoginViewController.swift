@@ -31,6 +31,14 @@ class LoginViewController: UIViewController {
 //
 //        btnFBLogin.readPermissions = ["public_profile", "email"]
     }
+    override func viewWillAppear(_ animated: Bool) {
+        print("willappear")
+        if let user = LoginManager.getUserLogged() {
+            performSegue(withIdentifier: "loginTo", sender: nil)
+            self.user = user
+            print("isLoged")
+        }
+    }
     
     fileprivate func observeKeyboardNotifications() {
         
@@ -105,7 +113,7 @@ class LoginViewController: UIViewController {
             let result = LoginManager.isValid(email: username, password: password)
             if result.success{
                 user = result.object as? User
-                self.performSegue(withIdentifier: "goTo", sender: nil)
+                self.performSegue(withIdentifier: "login To", sender: nil)
             }else{
                 let alert = UIAlertController(title: "Incorrect username or password", message: nil, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)

@@ -24,9 +24,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         loadResouces()
+        setupCoreData()
 
         // Override point for customization after application launch.
         return true
+    }
+    
+    func setupCoreData(){
+        let userDefault = User(context: DataManager.getContext())
+        userDefault.username = "palomabispo"
+        userDefault.email = "palomabispo@alu.ufc.br"
+        userDefault.password = "123"
+        let pet1 = Pet(context: DataManager.getContext())
+        pet1.followersCount = 20
+        pet1.likeCount = 8
+        pet1.photoCount = 6
+        pet1.owner = userDefault
+        pet1.type = "Cachorro"
+        pet1.name = "Luluquinha"
+        let pet2 = Pet(context: DataManager.getContext())
+        pet2.followersCount = 1000
+        pet2.likeCount = 1
+        pet2.photoCount = 300
+        pet2.owner = userDefault
+        pet2.type = "Gato"
+        pet2.name = "Pichano"
+        let pet3 = Pet(context: DataManager.getContext())
+        pet3.followersCount = 220
+        pet3.likeCount = 3443
+        pet3.photoCount = 12
+        pet3.owner = userDefault
+        pet3.type = "Coelho"
     }
     
     func loadResouces(){
