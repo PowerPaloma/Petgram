@@ -34,7 +34,7 @@
 		2FB3121A217E53820004F9A4 /* BottomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31219217E53820004F9A4 /* BottomCollection.swift */; };
 		2FB3121D217E5B6E0004F9A4 /* BottonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */; };
 		2FB3121E217E5B6E0004F9A4 /* BottonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */; };
-		2FB31222217F594E0004F9A4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31221217F594E0004F9A4 /* CustomTextField.swift */; };
+		2FB31222217F594E0004F9A4 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31221217F594E0004F9A4 /* DesignableUITextField.swift */; };
 		2FB31224217F93F60004F9A4 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31223217F93F60004F9A4 /* LoginManager.swift */; };
 		2FB31226217F94610004F9A4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31225217F94610004F9A4 /* DataManager.swift */; };
 		2FB31228217F959C0004F9A4 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31227217F959C0004F9A4 /* RegisterManager.swift */; };
@@ -71,7 +71,7 @@
 		2FB31219217E53820004F9A4 /* BottomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCollection.swift; sourceTree = "<group>"; };
 		2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottonCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottonCollectionViewCell.xib; sourceTree = "<group>"; };
-		2FB31221217F594E0004F9A4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		2FB31221217F594E0004F9A4 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		2FB31223217F93F60004F9A4 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		2FB31225217F94610004F9A4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		2FB31227217F959C0004F9A4 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				2F54EB25217772B200B62E3E /* LoginViewController.swift */,
-				2FB31221217F594E0004F9A4 /* CustomTextField.swift */,
+				2FB31221217F594E0004F9A4 /* DesignableUITextField.swift */,
 				2FB31229217F976C0004F9A4 /* RegisterAccountViewController.swift */,
 			);
 			path = "Login and Register";
@@ -399,7 +399,7 @@
 				2FB3121D217E5B6E0004F9A4 /* BottonCollectionViewCell.swift in Sources */,
 				2F19AA75217FBBC30071C459 /* StoreManager.swift in Sources */,
 				2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */,
-				2FB31222217F594E0004F9A4 /* CustomTextField.swift in Sources */,
+				2FB31222217F594E0004F9A4 /* DesignableUITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

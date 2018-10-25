@@ -14,9 +14,9 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var scView: UIScrollView!
     @IBOutlet weak var getStartedButton: UIButton!
-    @IBOutlet weak var password: CustomTextField!
     @IBOutlet weak var btnFBLogin: FBSDKLoginButton!
-    @IBOutlet weak var username: CustomTextField!
+    @IBOutlet weak var password: DesignableUITextField!
+    @IBOutlet weak var username: DesignableUITextField!
     
     var activeField: UITextField!
     var user: User?
@@ -40,6 +40,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        getStartedButton.clipsToBounds = true
+        getStartedButton.layer.cornerRadius = 22
+    }
+    
     fileprivate func observeKeyboardNotifications() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
@@ -51,12 +57,12 @@ class LoginViewController: UIViewController {
     func setupLayout(){
         getStartedButton.clipsToBounds = true
         getStartedButton.layer.cornerRadius = 22
-        username.roundCorners(corners: .allCorners, radius: 15)
-        password.roundCorners(corners: .allCorners, radius: 15)
-        password.image = UIImage(named: "pass")
-        username.image = UIImage(named: "user")
-        password.setupImageView()
-        username.setupImageView()
+//        username.roundCorners(corners: .allCorners, radius: 15)
+//        password.roundCorners(corners: .allCorners, radius: 15)
+//        password.image = UIImage(named: "pass")
+//        username.image = UIImage(named: "user")
+//        password.setupImageView()
+//        username.setupImageView()
         
     }
     

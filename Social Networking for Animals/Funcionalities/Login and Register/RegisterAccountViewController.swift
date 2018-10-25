@@ -10,13 +10,14 @@ import UIKit
 
 class RegisterAccountViewController: UIViewController {
     
+
+    @IBOutlet weak var password: DesignableUITextField!
+    @IBOutlet weak var username: DesignableUITextField!
+    @IBOutlet weak var email: DesignableUITextField!
     @IBOutlet weak var invalidEmail: UILabel!
     @IBOutlet weak var viewImage: UIView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var scView: UIScrollView!
-    @IBOutlet weak var password: CustomTextField!
-    @IBOutlet weak var email: CustomTextField!
-    @IBOutlet weak var username: CustomTextField!
     @IBOutlet weak var singupButton: UIButton!
     var activeField: UITextField!
     var newUser: User!
@@ -37,9 +38,11 @@ class RegisterAccountViewController: UIViewController {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         
         image.addGestureRecognizer(tapGestureRecognizer!)
-        
-
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupLayout()
     }
     
 
@@ -56,15 +59,6 @@ class RegisterAccountViewController: UIViewController {
         viewImage.clipsToBounds = true
         viewImage.layer.cornerRadius = viewImage.frame.width/2
         singupButton.layer.cornerRadius = 22
-        username.roundCorners(corners: .allCorners, radius: 15)
-        password.roundCorners(corners: .allCorners, radius: 15)
-        email.roundCorners(corners: .allCorners, radius: 15)
-        password.image = UIImage(named: "pass")
-        username.image = UIImage(named: "user")
-        email.image = UIImage(named: "mail")
-        password.setupImageView()
-        username.setupImageView()
-        email.setupImageView()
         
     }
     
