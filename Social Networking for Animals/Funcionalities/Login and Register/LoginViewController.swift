@@ -32,12 +32,12 @@ class LoginViewController: UIViewController {
 //        btnFBLogin.readPermissions = ["public_profile", "email"]
     }
     override func viewWillAppear(_ animated: Bool) {
-        print("willappear")
-        if let user = LoginManager.getUserLogged() {
-            performSegue(withIdentifier: "loginTo", sender: nil)
-            self.user = user
-            print("isLoged")
-        }
+//        print("willappear")
+//        if let user = LoginManager.getUserLogged() {
+//            performSegue(withIdentifier: "loginTo", sender: nil)
+//            self.user = user
+//            print("isLoged")
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -116,10 +116,11 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-            let result = LoginManager.isValid(email: username, password: password)
+    
+            let result = LoginManager.isValid(username: username, password: password)
             if result.success{
                 user = result.object as? User
-                self.performSegue(withIdentifier: "login To", sender: nil)
+                self.performSegue(withIdentifier: "loginTo", sender: nil)
             }else{
                 let alert = UIAlertController(title: "Incorrect username or password", message: nil, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)

@@ -10,6 +10,7 @@ import UIKit
 
 class PetsCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var moreImageView: UIImageView!
     @IBOutlet weak var imagePet: UIImageView!
     @IBOutlet weak var namePet: UILabel!
@@ -21,12 +22,6 @@ class PetsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setup()
-    }
-    
-    func setup(){
-        imagePet.clipsToBounds = true
-        imagePet.layer.cornerRadius = imagePet.frame.width/2
     }
 
 }

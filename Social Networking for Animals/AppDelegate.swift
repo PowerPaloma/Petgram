@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         loadResouces()
-        setupCoreData()
+        //setupCoreData()
 
         // Override point for customization after application launch.
         return true
@@ -55,6 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pet3.photoCount = 12
         pet3.owner = userDefault
         pet3.type = "Coelho"
+        pet3.name = "Magali"
+        DataManager.saveContext()
+        print("saving in core data")
     }
     
     func loadResouces(){

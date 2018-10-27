@@ -15,6 +15,7 @@
 		2F19AA7F218231ED0071C459 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA7E218231ED0071C459 /* PetsViewController.swift */; };
 		2F19AA822182320C0071C459 /* PetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */; };
 		2F19AA832182320C0071C459 /* PetsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */; };
+		2F2ADE0E2184BB6E00BC635D /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE0D2184BB6E00BC635D /* AddPetViewController.swift */; };
 		2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC69217DF08E00CA1164 /* APIManager.swift */; };
 		2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC6B217DF0E600CA1164 /* Estruturas.swift */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		2F19AA7E218231ED0071C459 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetsCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F2ADE0D2184BB6E00BC635D /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 		2F36AC69217DF08E00CA1164 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2F36AC6B217DF0E600CA1164 /* Estruturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estruturas.swift; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +227,7 @@
 				2F19AA7E218231ED0071C459 /* PetsViewController.swift */,
 				2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */,
 				2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */,
+				2F2ADE0D2184BB6E00BC635D /* AddPetViewController.swift */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				2FB31228217F959C0004F9A4 /* RegisterManager.swift in Sources */,
 				2F19AA822182320C0071C459 /* PetsCollectionViewCell.swift in Sources */,
 				2FB31218217E52230004F9A4 /* TopShelfCollection.swift in Sources */,
+				2F2ADE0E2184BB6E00BC635D /* AddPetViewController.swift in Sources */,
 				2F54EB3521792E0E00B62E3E /* SearchViewController.swift in Sources */,
 				2F54EB12217757AB00B62E3E /* Social_Networking_for_Animals.xcdatamodeld in Sources */,
 				2FB31226217F94610004F9A4 /* DataManager.swift in Sources */,

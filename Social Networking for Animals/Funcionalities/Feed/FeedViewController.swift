@@ -17,8 +17,8 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        //collectionView.delegate = self
+        //collectionView.dataSource = self 
 
         // Do any additional setup after loading the view.
     }
@@ -59,3 +59,4 @@ extension UIView {
         self.layer.addSublayer(gradient)
     }
 }
+

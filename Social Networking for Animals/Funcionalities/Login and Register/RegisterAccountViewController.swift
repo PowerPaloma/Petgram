@@ -20,10 +20,11 @@ class RegisterAccountViewController: UIViewController {
     @IBOutlet weak var scView: UIScrollView!
     @IBOutlet weak var singupButton: UIButton!
     var activeField: UITextField!
-    var newUser: User!
     var imagePicker = UIImagePickerController()
     var tapGestureRecognizer: UITapGestureRecognizer? = nil
     var pickedImageName: String?
+    var transferProtocol: TransferData? = nil
+    var newUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,6 @@ class RegisterAccountViewController: UIViewController {
         setupLayout()
         observeKeyboardNotifications()
         imagePicker.delegate = self
-        newUser = User(context: DataManager.getContext())
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         
         image.addGestureRecognizer(tapGestureRecognizer!)
@@ -78,7 +78,7 @@ class RegisterAccountViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let dest = segue.destination as? FeedViewController else {return}
-        dest.user = newUser ?? nil
+        dest.user = newUser
     }
     
     @objc func keyboardWillHide(notif: Notification){
@@ -87,67 +87,66 @@ class RegisterAccountViewController: UIViewController {
         scView.scrollIndicatorInsets = contentInsets
     }
     
-
     @IBAction func singup(_ sender: Any) {
+        let alertCompleteFields = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
+        let alertInvalidUsername = UIAlertController(title: "Please, chose another username", message: nil, preferredStyle: .alert)
         if(RegisterManager.checkTextFieldIsEmpty(textFields: [self.password, self.email, self.username])){
-            let alert = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 5
+            
+            DispatchQueue.main.async {
+                self.present(alertCompleteFields, animated: true, completion: nil)
+            }
+            let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
+                alertCompleteFields.dismiss(animated: true, completion: nil)
             }
         }else{
             guard let email = self.email.text, let password = self.password.text,let username = self.username.text else {
-                let alert = UIAlertController(title: "Check all the fields!", message: nil, preferredStyle: .alert)
                 DispatchQueue.main.async {
-                    self.present(alert, animated: true, completion: nil)
+                    self.present(alertCompleteFields, animated: true, completion: nil)
                 }
-                    let when = DispatchTime.now() + 3
-                    DispatchQueue.main.asyncAfter(deadline: when){
-                        alert.dismiss(animated: true, completion: nil)
-                    }
+                let when = DispatchTime.now() + 3
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alertCompleteFields.dismiss(animated: true, completion: nil)
+                }
                 return
             }
-            RegisterManager.validateEmail(email:email) { (error, isValid, suggestionEmail) in
-                if !(error == nil){
-                    return
-                }
-                if isValid {
-                    DispatchQueue.main.async {
-                        self.invalidEmail.isHidden = true
-                        guard let imageUser = self.image.image else {
-                            guard let imageDefault = UIImage(named: "user") else {
-                                self.newUser.photo = ""
-                                DataManager.saveContext()
-                                return
-                            }
-                            self.newUser.photo = StoreManager.saving(image:imageDefault, withName: self.pickedImageName ?? "profilePhoto")
-                            DataManager.saveContext()
-                            return
+            if RegisterManager.validateRegister(username: username) {
+                RegisterManager.validateEmail(email:email) { (error, isValid, suggestionEmail) in
+                    if !(error == nil){
+                        return
+                    }
+                    if isValid {
+                         DispatchQueue.main.async {
+                            self.invalidEmail.isHidden = true
+                            self.newUser = RegisterManager.saveNewUser(username: username, password: password, email: email, photo: self.image.image)
                         }
-                        self.newUser.photo = StoreManager.saving(image:imageUser, withName: self.pickedImageName ?? "profilePhoto")
+                        self.performSegue(withIdentifier: "registerTo", sender: nil)
+                        
+                    }else{
+                        DispatchQueue.main.async {
+                            self.invalidEmail.isHidden = false
+                            self.invalidEmail.shake()
+                        }
                     }
-                    self.newUser.email = email
-                    self.newUser.password = password
-                    self.newUser.username = username
-                    DataManager.saveContext()
+                }
                     
-                    self.performSegue(withIdentifier: "registerTo", sender: nil)
-                    
-                }else{
-                    DispatchQueue.main.async {
-                        self.invalidEmail.isHidden = false
-                        self.invalidEmail.shake()
-                    }
-                    
+            }else{
+                DispatchQueue.main.async {
+                    self.present(alertInvalidUsername, animated: true, completion: nil)
+                }
+                let when = DispatchTime.now() + 2
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alertInvalidUsername.dismiss(animated: true, completion: nil)
                 }
             }
-            
         }
     }
+    
+
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -163,27 +162,35 @@ class RegisterAccountViewController: UIViewController {
             guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) else {
                 let alert: UIAlertController = UIAlertController(title: "Oops...", message: "Camera is not available", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
                 return
             }
             
             self.imagePicker.sourceType = .camera
             
-            self.present(self.imagePicker, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
         }
         
         let galeriaAction = UIAlertAction(title: "Library", style: .default)
         { _ in
             self.imagePicker.sourceType = .photoLibrary
             
-            self.present(self.imagePicker, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
         }
         
         actionSheet.addAction(cancelAction)
         actionSheet.addAction(cameraAction)
         actionSheet.addAction(galeriaAction)
         
-        self.present(actionSheet, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(actionSheet, animated: true, completion: nil)
+        }
         
     }
     

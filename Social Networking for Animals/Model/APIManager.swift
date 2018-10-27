@@ -146,30 +146,45 @@ class APIManager: NSObject {
         URLSession.shared.dataTask(with: url) { (data, response
             , error) in
             if error != nil {
-                completion(error, false, nil)
+                DispatchQueue.main.async {
+                    completion(error, false, nil)
+                }
+                
             }
             guard let data = data else {
-                completion(error, false, nil)
+                DispatchQueue.main.async {
+                    completion(error, false, nil)
+                }
                 return
             }
             do {
                 let decoder = JSONDecoder()
                 let model = try decoder.decode(EmailValidate.self, from:data)
                 guard let mxFound = model.mxFound else{
-                    completion(nil, false, nil)
+                    DispatchQueue.main.async {
+                        completion(nil, false, nil)
+                    }
                     return
                 }
                 guard let isValid = model.formatValid else {
-                    completion(nil, false, nil)
+                    DispatchQueue.main.async {
+                        completion(nil, false, nil)
+                    }
                     return
                 }
                 if  isValid && mxFound{
-                    completion(nil, true, nil)
+                    DispatchQueue.main.async {
+                        completion(nil, true, nil)
+                    }
                 }else{
-                    completion(nil, false, model.didYouMean)
+                    DispatchQueue.main.async {
+                        completion(nil, false, model.didYouMean)
+                    }
                 }
             } catch let err {
-                completion(err, false, nil)
+                DispatchQueue.main.async {
+                    completion(err, false, nil)
+                }
             }
             }.resume()
         
