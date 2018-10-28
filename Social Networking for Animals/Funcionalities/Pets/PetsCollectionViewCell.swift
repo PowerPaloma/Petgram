@@ -22,6 +22,8 @@ class PetsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        imagePet.clipsToBounds = true
+//        imagePet.layer.cornerRadius = imagePet.frame.width/2
     }
 
 }

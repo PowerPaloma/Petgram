@@ -11,6 +11,7 @@ import CoreData
 import FBSDKCoreKit
 
 var animals: [Animal] = []
+//let resourcesAnimals = [APIManager.getRandonCat, APIManager.getRandonDog, APIManager.getRandonFox]
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,34 +31,72 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    
     func setupCoreData(){
-        let userDefault = User(context: DataManager.getContext())
-        userDefault.username = "palomabispo"
-        userDefault.email = "palomabispo@alu.ufc.br"
-        userDefault.password = "123"
+        //mock users
+        let user1 = User(context: DataManager.getContext())
+        user1.username = "palomabispo"
+        user1.email = "palomabispo@alu.ufc.br"
+        user1.password = "123"
+        let user2 = User(context: DataManager.getContext())
+        user2.username = "mmdisousa"
+        user2.email = "palomabispo@alu.ufc.br"
+        user2.password = "123"
+        let user3 = User(context: DataManager.getContext())
+        user3.username = "marialuiza"
+        user3.email = "palomabispo@alu.ufc.br"
+        user3.password = "123"
+        // pets for user1
         let pet1 = Pet(context: DataManager.getContext())
         pet1.followersCount = 20
         pet1.likeCount = 8
         pet1.photoCount = 6
-        pet1.owner = userDefault
+        pet1.owner = user1
         pet1.type = "Cachorro"
-        pet1.name = "Luluquinha"
+        pet1.name = "Max"
         let pet2 = Pet(context: DataManager.getContext())
-        pet2.followersCount = 1000
-        pet2.likeCount = 1
-        pet2.photoCount = 300
-        pet2.owner = userDefault
+        pet2.followersCount = 100
+        pet2.likeCount = 200
+        pet2.photoCount = 30
+        pet2.owner = user1
         pet2.type = "Gato"
-        pet2.name = "Pichano"
+        pet2.name = "Margot"
         let pet3 = Pet(context: DataManager.getContext())
-        pet3.followersCount = 220
-        pet3.likeCount = 3443
-        pet3.photoCount = 12
-        pet3.owner = userDefault
-        pet3.type = "Coelho"
-        pet3.name = "Magali"
+        pet3.followersCount = 5
+        pet3.likeCount = 7
+        pet3.photoCount = 2
+        pet3.owner = user1
+        pet3.type = "Gato"
+        pet3.name = "Salém"
+        
+        //pets for user2
+        let pet4 = Pet(context: DataManager.getContext())
+        pet4.followersCount = 15
+        pet4.likeCount = 10
+        pet4.photoCount = 8
+        pet4.owner = user2
+        pet4.type = "Cachorro"
+        pet4.name = "Billy"
+        let pet5 = Pet(context: DataManager.getContext())
+        pet5.followersCount = 3
+        pet5.likeCount = 2
+        pet5.photoCount = 1
+        pet5.owner = user2
+        pet5.type = "Cachorro"
+        pet5.name = "Beethoven"
+        let pet6 = Pet(context: DataManager.getContext())
+        pet6.followersCount = 26
+        pet6.likeCount = 13
+        pet6.photoCount = 5
+        pet6.owner = user3
+        pet6.type = "Cachorro"
+        pet6.name = "Spike"
+        
         DataManager.saveContext()
         print("saving in core data")
+        for _ in 0...5 {
+            PostManager.newPost()
+        }
     }
     
     func loadResouces(){

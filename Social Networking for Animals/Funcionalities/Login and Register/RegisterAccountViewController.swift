@@ -15,7 +15,6 @@ class RegisterAccountViewController: UIViewController {
     @IBOutlet weak var username: DesignableUITextField!
     @IBOutlet weak var email: DesignableUITextField!
     @IBOutlet weak var invalidEmail: UILabel!
-    @IBOutlet weak var viewImage: UIView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var scView: UIScrollView!
     @IBOutlet weak var singupButton: UIButton!
@@ -42,7 +41,8 @@ class RegisterAccountViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupLayout()
+        //setupLayout()
+        singupButton.layer.cornerRadius = 22
     }
     
 
@@ -56,8 +56,6 @@ class RegisterAccountViewController: UIViewController {
     
     func setupLayout(){
         singupButton.clipsToBounds = true
-        viewImage.clipsToBounds = true
-        viewImage.layer.cornerRadius = viewImage.frame.width/2
         singupButton.layer.cornerRadius = 22
         
     }
@@ -118,6 +116,7 @@ class RegisterAccountViewController: UIViewController {
                     if isValid {
                          DispatchQueue.main.async {
                             self.invalidEmail.isHidden = true
+                            self.image.accessibilityIdentifier = self.pickedImageName
                             self.newUser = RegisterManager.saveNewUser(username: username, password: password, email: email, photo: self.image.image)
                         }
                         self.performSegue(withIdentifier: "registerTo", sender: nil)
@@ -210,7 +209,9 @@ extension RegisterAccountViewController: UIImagePickerControllerDelegate, UINavi
         if let imagePicked = info[.originalImage] as? UIImage {
             DispatchQueue.main.async {
                 self.image.image = imagePicked
-                self.image.bounds = self.viewImage.bounds
+                self.image.clipsToBounds = true
+                self.image.layer.cornerRadius = self.image.frame.width/2
+                //self.image.bounds = self.viewImage.bounds
                 self.image.contentMode = .scaleAspectFill
             }
             self.pickedImageName = "Petgram\(imagePicked.hashValue)"

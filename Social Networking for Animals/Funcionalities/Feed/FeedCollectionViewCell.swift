@@ -11,8 +11,9 @@ import UIKit
 class FeedCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var petName: UILabel!
-    @IBOutlet weak var imageUser: UIImageView!
+    @IBOutlet weak var imagePet: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postView: UIView!
     @IBOutlet weak var likeView: UIView!
     @IBOutlet weak var imageLike: UIImageView!
@@ -27,12 +28,13 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setup()
         // Initialization code
     }
     
     func setup(){
-        imageUser.clipsToBounds = true
-        imageUser.layer.cornerRadius = imageUser.frame.width/2
+        imagePet.clipsToBounds = true
+        imagePet.layer.cornerRadius = imagePet.frame.width/2
         likeView.layer.cornerRadius = likeView.frame.width/2
         comentView.layer.cornerRadius = comentView.frame.width/2
         shareView.layer.cornerRadius = shareView.frame.width/2

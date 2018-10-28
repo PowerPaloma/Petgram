@@ -20,20 +20,18 @@ class LoginManager: NSObject {
         }
         let user = result.first
         let userDefaults = UserDefaults.standard
-        userDefaults.set(user?.objectID.uriRepresentation(), forKey: "userID")
+        userDefaults.set(user?.username, forKey: "userID")
         //userDefaults.synchronize()
         userDefaults.set(true, forKey: "isLogged")
         return (true, user)
         
     }
     
-    static func getUserLogged() -> User? {
-        let contex = DataManager.getContext()
-        
-        guard let url = UserDefaults.standard.url(forKey: "userID") else {return nil}
-        guard let objetcID: NSManagedObjectID = contex.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url) else {return nil}
-        guard let userTemp = contex.object(with: objetcID)  as? User else {return nil}
-        return userTemp
+    static func getUserLogged() -> User? {        
+        guard let username = UserDefaults.standard.string(forKey:  "userID") else {return nil}
+        let predicate = NSPredicate(format: "username == %@", username)
+        guard let result = DataManager.executeThe(query: predicate, forEntityName: "User") as? [User] else {return nil}
+        return result.first
         
         
     }

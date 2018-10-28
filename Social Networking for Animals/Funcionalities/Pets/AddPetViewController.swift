@@ -138,7 +138,21 @@ class AddPetViewController: UIViewController {
             newPet.photoCount = 0
             newPet.type = kindOfAnimal
             newPet.birthdayYear = birthbayYear
-            newPet.owner = LoginManager.getUserLogged()
+            let user = LoginManager.getUserLogged()
+            newPet.owner = user
+            user?.addToPets(newPet)
+            guard let photoPet = self.imagePet.image else{
+                guard let imagePlaceholder = UIImage(named: "Cat") else{
+                    newPet.photo = ""
+                    DataManager.saveContext()
+                    return
+                }
+                newPet.photo = StoreManager.saving(image: imagePlaceholder, withName: "petPhoto")
+                DataManager.saveContext()
+                return
+                
+            }
+             newPet.photo = StoreManager.saving(image: photoPet , withName: self.pickedImageName ?? "petPhoto")
             DataManager.saveContext()
             self.dismiss(animated: true, completion: nil)
         }
@@ -166,3 +180,12 @@ extension AddPetViewController: UIImagePickerControllerDelegate, UINavigationCon
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+extension AddPetViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+}
+

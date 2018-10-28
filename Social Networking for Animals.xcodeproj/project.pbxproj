@@ -16,6 +16,9 @@
 		2F19AA822182320C0071C459 /* PetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */; };
 		2F19AA832182320C0071C459 /* PetsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */; };
 		2F2ADE0E2184BB6E00BC635D /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE0D2184BB6E00BC635D /* AddPetViewController.swift */; };
+		2F2ADE122185DC9200BC635D /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE112185DC9200BC635D /* PostManager.swift */; };
+		2F2ADE152186255100BC635D /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE132186255100BC635D /* LoadingCollectionViewCell.swift */; };
+		2F2ADE162186255100BC635D /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ADE142186255100BC635D /* LoadingCollectionViewCell.xib */; };
 		2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC69217DF08E00CA1164 /* APIManager.swift */; };
 		2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC6B217DF0E600CA1164 /* Estruturas.swift */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		2F19AA802182320C0071C459 /* PetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F19AA812182320C0071C459 /* PetsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetsCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F2ADE0D2184BB6E00BC635D /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		2F2ADE112185DC9200BC635D /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		2F2ADE132186255100BC635D /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F2ADE142186255100BC635D /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F36AC69217DF08E00CA1164 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2F36AC6B217DF0E600CA1164 /* Estruturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estruturas.swift; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +145,7 @@
 				2FB31225217F94610004F9A4 /* DataManager.swift */,
 				2FB31227217F959C0004F9A4 /* RegisterManager.swift */,
 				2F19AA74217FBBC30071C459 /* StoreManager.swift */,
+				2F2ADE112185DC9200BC635D /* PostManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +202,8 @@
 				2F19AA762180DA880071C459 /* FeedViewController.swift */,
 				2F19AA7A218101940071C459 /* FeedCollectionViewCell.swift */,
 				2F19AA7B218101940071C459 /* FeedCollectionViewCell.xib */,
+				2F2ADE132186255100BC635D /* LoadingCollectionViewCell.swift */,
+				2F2ADE142186255100BC635D /* LoadingCollectionViewCell.xib */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -312,6 +321,7 @@
 				2F54EB17217757AE00B62E3E /* LaunchScreen.storyboard in Resources */,
 				2F54EB3321792B9400B62E3E /* TopShelfCollectionViewCell.xib in Resources */,
 				2FB3121E217E5B6E0004F9A4 /* BottonCollectionViewCell.xib in Resources */,
+				2F2ADE162186255100BC635D /* LoadingCollectionViewCell.xib in Resources */,
 				2F19AA832182320C0071C459 /* PetsCollectionViewCell.xib in Resources */,
 				2F54EB14217757AE00B62E3E /* Assets.xcassets in Resources */,
 				2F19AA7D218101940071C459 /* FeedCollectionViewCell.xib in Resources */,
@@ -386,6 +396,8 @@
 				2FB3121A217E53820004F9A4 /* BottomCollection.swift in Sources */,
 				2F54EB3221792B9400B62E3E /* TopShelfCollectionViewCell.swift in Sources */,
 				2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */,
+				2F2ADE152186255100BC635D /* LoadingCollectionViewCell.swift in Sources */,
+				2F2ADE122185DC9200BC635D /* PostManager.swift in Sources */,
 				2F19AA7F218231ED0071C459 /* PetsViewController.swift in Sources */,
 				2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */,
 				2FB31228217F959C0004F9A4 /* RegisterManager.swift in Sources */,

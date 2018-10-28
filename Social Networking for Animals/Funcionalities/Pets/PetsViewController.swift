@@ -15,16 +15,26 @@ class PetsViewController: UIViewController {
     let minimumInteritemSpacing: CGFloat = 20
     let minimumLineSpacing:CGFloat = 20
     
-    var user: User?
-    var pets: [Pet]?
+    var user: User? {
+        return LoginManager.getUserLogged()
+    }
+    var pets: [Pet]{
+        guard let pets = user?.pets?.allObjects as? [Pet] else {return []}
+        return pets
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.pets = getPets()
-        
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         collectionView.register(UINib(nibName: "PetsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellPet")
+        collectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
     
     func getPets() -> [Pet]?{
@@ -44,33 +54,31 @@ class PetsViewController: UIViewController {
 extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.pets?.count ?? 0 
+        return self.pets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPet", for: indexPath) as! PetsCollectionViewCell
         
-        cell.contentView.layer.cornerRadius = 15.0
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.clear.cgColor
-        cell.contentView.layer.masksToBounds = true
-        
-        cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 10.0
-        cell.layer.shadowOpacity = 0.3
-        cell.layer.masksToBounds = false
-        cell.containerView.layer.shadowOffset = CGSize.init(width: 4.0, height: 4.0)
+//        cell.contentView.layer.cornerRadius = 15.0
+//        cell.contentView.layer.borderWidth = 1.0
+//        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+//        cell.contentView.layer.masksToBounds = true
+//        
+//        cell.layer.shadowColor = UIColor.gray.cgColor
+//        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+//        cell.layer.shadowRadius = 10.0
+//        cell.layer.shadowOpacity = 0.3
+//        cell.layer.masksToBounds = false
+//        cell.containerView.layer.shadowOffset = CGSize.init(width: 4.0, height: 4.0)
         
         
         //print(cell.imagePet.frame.width/2.0, "aquiiiii")
         
         //cell.imagePet.contentMode = .scaleAspectFit
         
-        
-        
-        guard let pets = self.pets else {return cell}
-        let pet = pets[indexPath.row]
+    
+        let pet = self.pets[indexPath.row]
         
 
         cell.namePet.text = pet.name
@@ -96,7 +104,7 @@ extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = collectionView.frame.size.width - (minimumInteritemSpacing + minimumLineSpacing)
-        return CGSize.init(width: itemWidth, height: 150)
+        return CGSize.init(width: itemWidth, height: 140)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minimumLineSpacing

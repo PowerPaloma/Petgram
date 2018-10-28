@@ -38,10 +38,14 @@ class APIManager: NSObject {
         URLSession.shared.dataTask(with: url) { (data, response
             , error) in
             if error != nil {
-                completion(error, nil)
+                DispatchQueue.main.async {
+                    completion(error, nil)
+                }
             }
             guard let data = data else {
-                completion(error, nil)
+                DispatchQueue.main.async {
+                    completion(error, nil)
+                }
                 return
             }
             
@@ -50,24 +54,33 @@ class APIManager: NSObject {
                 let model = try decoder.decode(Fox.self, from:
                     data)
                 guard let imageURL = model.image else {
-                    completion(error, nil)
+                    DispatchQueue.main.async {
+                        completion(error, nil)
+                    }
                     return
                     
                 }
                 downloadImage(from: imageURL, completion: { (image, error) in
                     if error != nil {
-                        completion(error, nil)
+                        DispatchQueue.main.async {
+                            completion(error, nil)
+                        }
                     }
                     guard let image = image else {
-                        completion(error, nil)
+                        DispatchQueue.main.async {
+                            completion(error, nil)
+                        }
                         return
                     }
-                    completion(nil, image)
-                    
+                    DispatchQueue.main.async {
+                        completion(nil, image)
+                    }
                 })
     
             } catch let err {
-                completion(err, nil)
+                DispatchQueue.main.async {
+                    completion(err, nil)
+                }
             }
             }.resume()
     }
@@ -78,7 +91,9 @@ class APIManager: NSObject {
         URLSession.shared.dataTask(with: url) { (data, response
             , error) in
             if error != nil {
-                completion(error, nil)
+                DispatchQueue.main.async {
+                    completion(error, nil)
+                }
             }
             guard let data = data else { return }
             
@@ -89,17 +104,24 @@ class APIManager: NSObject {
                 guard let imageURL = model.url else {return}
                 downloadImage(from: imageURL, completion: { (image, error) in
                     if error != nil {
-                        completion(error, nil)
+                        DispatchQueue.main.async {
+                            completion(error, nil)
+                        }
                     }
                     guard let image = image else {
-                        completion(error, nil)
+                        DispatchQueue.main.async {
+                            completion(error, nil)
+                        }
                         return
                     }
-                    completion(nil, image)
-                    
+                    DispatchQueue.main.async {
+                        completion(nil, image)
+                    }
                 })
             } catch let err {
-                completion(err, nil)
+                DispatchQueue.main.async {
+                    completion(err, nil)
+                }
             }
             }.resume()
     }
@@ -110,10 +132,11 @@ class APIManager: NSObject {
         URLSession.shared.dataTask(with: url) { (data, response
             , error) in
             if error != nil {
-                completion(error, nil)
+                DispatchQueue.main.async {
+                    completion(error, nil)
+                }
             }
-            guard let data = data else {
-                return }
+            guard let data = data else {return }
             
             do {
                 let decoder = JSONDecoder()
@@ -122,17 +145,24 @@ class APIManager: NSObject {
                 guard let imageURL = model.file else {return}
                 downloadImage(from: imageURL, completion: { (image, error) in
                     if error != nil {
-                        completion(error, nil)
+                        DispatchQueue.main.async {
+                            completion(error, nil)
+                        }
                     }
                     guard let image = image else {
-                        completion(error, nil)
+                        DispatchQueue.main.async {
+                            completion(error, nil)
+                        }
                         return
                     }
-                    completion(nil, image)
-                    
+                    DispatchQueue.main.async {
+                        completion(nil, image)
+                    }
                 })
             } catch let err {
-                completion(err, nil)
+                DispatchQueue.main.async {
+                    completion(err, nil)
+                }
             }
             }.resume()
     }
