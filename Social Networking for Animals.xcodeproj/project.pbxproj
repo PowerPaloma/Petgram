@@ -19,6 +19,7 @@
 		2F2ADE122185DC9200BC635D /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE112185DC9200BC635D /* PostManager.swift */; };
 		2F2ADE152186255100BC635D /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE132186255100BC635D /* LoadingCollectionViewCell.swift */; };
 		2F2ADE162186255100BC635D /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ADE142186255100BC635D /* LoadingCollectionViewCell.xib */; };
+		2F2ADE182186C4B100BC635D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE172186C4B100BC635D /* DetailsViewController.swift */; };
 		2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC69217DF08E00CA1164 /* APIManager.swift */; };
 		2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC6B217DF0E600CA1164 /* Estruturas.swift */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		2F2ADE112185DC9200BC635D /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		2F2ADE132186255100BC635D /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F2ADE142186255100BC635D /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F2ADE172186C4B100BC635D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2F36AC69217DF08E00CA1164 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2F36AC6B217DF0E600CA1164 /* Estruturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estruturas.swift; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 				2FB31219217E53820004F9A4 /* BottomCollection.swift */,
 				2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */,
 				2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */,
+				2F2ADE172186C4B100BC635D /* DetailsViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				2F2ADE122185DC9200BC635D /* PostManager.swift in Sources */,
 				2F19AA7F218231ED0071C459 /* PetsViewController.swift in Sources */,
 				2F54EB0C217757AB00B62E3E /* ViewController.swift in Sources */,
+				2F2ADE182186C4B100BC635D /* DetailsViewController.swift in Sources */,
 				2FB31228217F959C0004F9A4 /* RegisterManager.swift in Sources */,
 				2F19AA822182320C0071C459 /* PetsCollectionViewCell.swift in Sources */,
 				2FB31218217E52230004F9A4 /* TopShelfCollection.swift in Sources */,

@@ -20,6 +20,9 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if( traitCollection.forceTouchCapability == .available){
+            registerForPreviewing(with: self, sourceView: collectionViewBottom)
+        }
         guard let entity = DataManager.getEntity(entity: "Post") else {return}
         let result = DataManager.getAll(entity: entity)
         if result.success {
@@ -45,21 +48,36 @@ class SearchViewController: UIViewController {
         self.collectionViewBottom.reloadData()
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        collectionViewTopShelf.collectionViewLayout.invalidateLay
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionViewTopShelf.collectionViewLayout.invalidateLayout()
+    }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension SearchViewController: UIViewControllerPreviewingDelegate{
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = collectionViewBottom.indexPathForItem(at: location) else { return nil }
+        guard let cell = collectionViewBottom.cellForItem(at: indexPath) else { return nil}
+        let post = posts[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let previewController = storyboard.instantiateViewController(withIdentifier: "preview") as? DetailsViewController else {return nil}
+        previewController.post = post
+        previewController.preferredContentSize = CGSize(width: 0.0, height: 400)
+        previewingContext.sourceRect = cell.frame
+        return previewController
+        
     }
-    */
-
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        show(viewControllerToCommit, sender: self)
+        
+    }
+    
+    
 }
 
