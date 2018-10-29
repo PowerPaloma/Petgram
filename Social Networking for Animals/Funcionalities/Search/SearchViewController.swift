@@ -15,11 +15,19 @@ class SearchViewController: UIViewController {
     
     var topShelf: TopShelfCollection!
     var bottomCollection: BottomCollection!
+    var posts: [Post] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let entity = DataManager.getEntity(entity: "Post") else {return}
+        let result = DataManager.getAll(entity: entity)
+        if result.success {
+            guard let posts = result.objects as? [Post] else {return}
+            self.posts = posts
+        }
         topShelf = TopShelfCollection()
-        bottomCollection = BottomCollection()
+        bottomCollection = BottomCollection(posts: posts)
         
         self.collectionViewBottom.register(UINib(nibName: "BottonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellBottom")
         self.collectionViewTopShelf.register(UINib(nibName: "TopShelfCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellUp")

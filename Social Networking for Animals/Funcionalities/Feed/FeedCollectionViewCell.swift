@@ -35,6 +35,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     func setup(){
         imagePet.clipsToBounds = true
         imagePet.layer.cornerRadius = imagePet.frame.width/2
+        imagePet.contentMode = .scaleAspectFill
         likeView.layer.cornerRadius = likeView.frame.width/2
         comentView.layer.cornerRadius = comentView.frame.width/2
         shareView.layer.cornerRadius = shareView.frame.width/2

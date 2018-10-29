@@ -74,10 +74,10 @@ class RegisterAccountViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dest = segue.destination as? FeedViewController else {return}
-        dest.user = newUser
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let dest = segue.destination as? FeedViewController else {return}
+//        dest.user = newUser
+//    }
     
     @objc func keyboardWillHide(notif: Notification){
         let contentInsets = NSCoder.uiEdgeInsets(for: "")

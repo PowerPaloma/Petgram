@@ -88,11 +88,11 @@ class LoginViewController: UIViewController {
         scView.scrollIndicatorInsets = contentInsets
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dest = segue.destination as? FeedViewController else {return}
-        
-        dest.user = user ?? nil
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let dest = segue.destination as? FeedViewController else {return}
+//        
+//        dest.user = user ?? nil
+//    }
     
     
 //    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {

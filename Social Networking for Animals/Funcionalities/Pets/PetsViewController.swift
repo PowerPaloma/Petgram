@@ -87,17 +87,15 @@ extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.likesCount.text = "\(pet.likeCount)"
         cell.photosCount.text = "\(pet.photoCount) "
         
-        
+        cell.imagePet.clipsToBounds = true
+        cell.imagePet.layer.cornerRadius = cell.imagePet.frame.width/2.0
         guard let imagePath = pet.photo else {
             cell.imagePet.image = UIImage(named: "Cat")
-            cell.imagePet.clipsToBounds = true
-            cell.imagePet.layer.cornerRadius = cell.imagePet.frame.width/2.0
             return cell
         }
         cell.imagePet.image = StoreManager.loadImageFromPath(imagePath)
         
-        cell.imagePet.clipsToBounds = true
-        cell.imagePet.layer.cornerRadius = cell.imagePet.frame.width/2.0
+        
         
         return cell
     }

@@ -43,11 +43,11 @@ class RegisterManager {
                 DataManager.saveContext()
                 return newUser
             }
-            newUser.photo = StoreManager.saving(image:imageDefault, withName:"profilePhoto")
+            newUser.photo = StoreManager.saving(image:imageDefault, withName:"\(imageDefault.hash)")
             DataManager.saveContext()
             return newUser
         }
-        newUser.photo = StoreManager.saving(image:imageUser, withName: imageUser.accessibilityIdentifier ?? "profilePhoto")
+        newUser.photo = StoreManager.saving(image:imageUser, withName: imageUser.accessibilityIdentifier ?? "\(imageUser.hashValue)")
         DataManager.saveContext()
         return newUser
         

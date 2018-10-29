@@ -17,17 +17,25 @@ class APIManager: NSObject {
         URLSession.shared.dataTask(with: url) { (data, response
             , error) in
             if error != nil {
-                completion(nil, error)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
             }
             guard let data = data else {
-                completion(nil, error)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
                 return
             }
             guard let image = UIImage(data: data) else {
-                completion(nil, error)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
                 return
             }
-            completion(image, nil)
+            DispatchQueue.main.async {
+                completion(image, nil)
+            }
             }.resume()
         
     }
@@ -218,6 +226,63 @@ class APIManager: NSObject {
             }
             }.resume()
         
+    }
+    
+    
+    static func getRandonAnimal(completion: @escaping (Error?, UIImage?) -> Void) {
+        let rand = Int.random(in: 0...2)
+        switch rand {
+        case 0 :
+            APIManager.getRandonCat { (error, image) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        completion(error, nil)
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        completion(nil, image)
+                    }
+                    
+                }
+            }
+        case 1 :
+            APIManager.getRandonDog { (error, image) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        completion(error, nil)
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        completion(nil, image)
+                    }
+                }
+            }
+        case 2 :
+            APIManager.getRandonFox { (error, image) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        completion(error, nil)
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        completion(nil, image)
+                    }
+                }
+            }
+        
+        default:
+            APIManager.getRandonDog { (error, image) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        completion(error, nil)
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        completion(nil, image)
+                    }
+                }
+            }
+        }
     }
 
 

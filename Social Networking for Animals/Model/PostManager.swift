@@ -18,68 +18,89 @@ class PostManager: NSObject {
         return image
     }
     
-    
-    static func newPost(){
-        let newPost = Post(context: DataManager.getContext())
-        guard let entity = DataManager.getEntity(entity: "Pet") else {return}
-        let result = DataManager.getAll(entity: entity)
-        if result.success {
-            guard let pets = result.objects as? [Pet] else {return}
-            newPost.pet = pets.randomElement()
-            let rand = Int.random(in: 0...2)
-            switch rand {
-            case 0 :
-                DispatchQueue.main.async {
-                    APIManager.getRandonFox { (error, image) in
-                        if !(error == nil){
-                            print("ERROR")
-                            return
-                        }
-                        guard let imagePost = self.getImage(from: image) else{
-                            newPost.photo = ""
-                            return
-                        }
-                        newPost.photo = StoreManager.saving(image: imagePost, withName: "post")
-                    }
-                }
-                
-            case 1 :
-                 DispatchQueue.main.async {
-                    APIManager.getRandonDog { (error, image) in
-                        if !(error == nil){
-                            return
-                        }
-                        guard let imagePost = self.getImage(from: image) else{
-                            newPost.photo = ""
-                            return
-                        }
-                        newPost.photo = StoreManager.saving(image: imagePost, withName: "post")
-                    }
-                }
-            case 2 :
-                DispatchQueue.main.async {
-                    APIManager.getRandonCat { (error, image) in
-                        if !(error == nil){
-                            return
-                        }
-                        guard let imagePost = self.getImage(from: image) else{
-                            newPost.photo = ""
-                            return
-                        }
-                        newPost.photo = StoreManager.saving(image: imagePost, withName: "post")
-                    }
-                }
-                
-            default:
-                guard let imageDefault = UIImage(named: "Cat") else{
-                    newPost.photo = ""
+    static func newPost(completion: @escaping (Post?, Error?) -> Void){
+        let rand = Int.random(in: 0...2)
+        switch rand {
+        case 0 :
+            APIManager.getRandonCat { (error, image) in
+                if !(error == nil){
+                    print("error in randon cat")
+                    completion(nil, error)
                     return
                 }
-                newPost.photo = StoreManager.saving(image: imageDefault, withName: "post")
+                let newPost = Post(context: DataManager.getContext())
+                guard let entity = DataManager.getEntity(entity: "Pet") else {return}
+                let result = DataManager.getAll(entity: entity)
+                if result.success {
+                    guard let pets = result.objects as? [Pet] else {return}
+                    newPost.pet = pets.randomElement()
+                }else{
+                    completion(nil, error)
+                }
+                guard let imagePost = self.getImage(from: image) else{
+                    newPost.photo = ""
+                    completion(nil, error)
+                    return
+                }
+                newPost.photo = StoreManager.saving(image: imagePost, withName: "post")
+                completion(newPost, nil)
             }
-        }
-        DataManager.saveContext()
+            break
+        case 1 :
+            APIManager.getRandonDog { (error, image) in
+                if !(error == nil){
+                    print("error in randon dog")
+                    completion(nil, error)
+                    return
+                }
+                let newPost = Post(context: DataManager.getContext())
+                guard let entity = DataManager.getEntity(entity: "Pet") else {return}
+                let result = DataManager.getAll(entity: entity)
+                if result.success {
+                    guard let pets = result.objects as? [Pet] else {return}
+                    newPost.pet = pets.randomElement()
+                }else{
+                    completion(nil, error)
+                }
+                guard let imagePost = self.getImage(from: image) else{
+                    newPost.photo = ""
+                    completion(nil, error)
+                    return
+                }
+                newPost.photo = StoreManager.saving(image: imagePost, withName: "post")
+                completion(newPost, nil)
+            }
+            break
+        case 2 :
+            APIManager.getRandonFox { (error, image) in
+                if !(error == nil){
+                    print("error in randon fox")
+                    completion(nil, error)
+                    return
+                }
+                let newPost = Post(context: DataManager.getContext())
+                guard let entity = DataManager.getEntity(entity: "Pet") else {return}
+                let result = DataManager.getAll(entity: entity)
+                if result.success {
+                    guard let pets = result.objects as? [Pet] else {return}
+                    newPost.pet = pets.randomElement()
+                }else{
+                    completion(nil, error)
+                }
+                guard let imagePost = self.getImage(from: image) else{
+                    newPost.photo = ""
+                    completion(nil, error)
+                    return
+                }
+                newPost.photo = StoreManager.saving(image: imagePost, withName: "post")
+                completion(newPost, nil)
+            }
+            break
+    
+        default:
+            completion(nil, NSError(domain: "", code: 0, userInfo: nil))
         
+        }
     }
 
 }

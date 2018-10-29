@@ -11,24 +11,33 @@ import UIKit
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var user: User?
-    var fetchingMore = false
-    var posts: [Post] {
-        guard let entity = DataManager.getEntity(entity: "Post") else {return [] }
-        let result = DataManager.getAll(entity: entity)
-        if result.success {
-            guard let posts = result.objects as? [Post] else {return [] }
-            return posts
-        }else{
-            return []
-        }
+    var user: User? {
+        return LoginManager.getUserLogged()
     }
+    var fetchingMore = false
+    var posts: [Post] = []
+//    var posts: [Post] {
+//        guard let entity = DataManager.getEntity(entity: "Post") else {return [] }
+//        let result = DataManager.getAll(entity: entity)
+//        if result.success {
+//            guard let posts = result.objects as? [Post] else {return [] }
+//            return posts
+//        }else{
+//            return []
+//        }
+//    }
     let minimumInteritemSpacing: CGFloat = 10
     let minimumLineSpacing:CGFloat = 10
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let entity = DataManager.getEntity(entity: "Post") else {return}
+        let result = DataManager.getAll(entity: entity)
+        if result.success {
+            guard let posts = result.objects as? [Post] else {return}
+            self.posts = posts
+        }
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -79,6 +88,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.userName.text = ""
             }
             if let imagePath = post.pet?.photo {
+                print(imagePath)
                 cell.imagePet.image = StoreManager.loadImageFromPath(imagePath)
             }
             return cell
@@ -101,12 +111,45 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
+    
     func beginfFetch(){
         self.fetchingMore = true
         collectionView.reloadSections(IndexSet(integer: 1))
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
             for _ in 0...6 {
-                PostManager.newPost()
+                APIManager.getRandonAnimal { (error, image) in
+                    if !(error == nil){
+                        print("error in saving post")
+                        return
+                    }else{
+                        let newPost = Post(context: DataManager.getContext())
+                        guard let entity = DataManager.getEntity(entity: "Pet") else {return}
+                        let result = DataManager.getAll(entity: entity)
+                        if result.success {
+                            guard let pets = result.objects as? [Pet] else {return}
+                            newPost.pet = pets.randomElement()
+                            guard let imagePost = image else {
+                                guard let imageDefault = UIImage(named: "image") else{
+                                    newPost.photo = ""
+                                    return
+                                }
+                                newPost.photo = StoreManager.saving(image: imageDefault, withName: "\(imageDefault.hashValue)")
+                                return
+                            }
+                            newPost.photo = StoreManager.saving(image: imagePost, withName: "\(imagePost.hashValue)")
+                            print("testing")
+                            DataManager.saveContext()
+                        }
+                        
+                    }
+                }
+            }
+            guard let entity = DataManager.getEntity(entity: "Post") else {return}
+            let result = DataManager.getAll(entity: entity)
+            if result.success {
+                guard let posts = result.objects as? [Post] else {return}
+                self.posts.removeAll()
+                self.posts = posts
             }
             self.collectionView.reloadData()
             self.fetchingMore = false
@@ -115,7 +158,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         let itemWidth = UIScreen.main.bounds.width - (minimumInteritemSpacing + minimumLineSpacing)
+         let itemWidth = UIScreen.main.bounds.width 
         if indexPath.section == 0 {
             let itemHeight = UIScreen.main.bounds.height - (minimumInteritemSpacing + minimumLineSpacing)
             return CGSize.init(width: itemWidth, height: itemHeight/1.5)

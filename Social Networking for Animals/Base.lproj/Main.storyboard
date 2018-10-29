@@ -201,7 +201,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellFeed" id="9Hr-EE-c1R" customClass="FeedCollectionViewCell" customModule="Social_Networking_for_Animals" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="9Hr-EE-c1R" customClass="FeedCollectionViewCell" customModule="Social_Networking_for_Animals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -740,7 +740,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyr-vh-qZp" userLabel="Close">
-                                                <rect key="frame" x="24" y="16" width="46" height="34"/>
+                                                <rect key="frame" x="24" y="16" width="46" height="9"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Close">
                                                     <color key="titleColor" red="0.3803921569" green="0.25490196079999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -812,7 +812,7 @@
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="qCO-r5-5gJ">
-                                                <rect key="frame" x="131.5" y="89.5" width="112.5" height="112.5"/>
+                                                <rect key="frame" x="131.5" y="41" width="112.5" height="112.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qCO-r5-5gJ" secondAttribute="height" multiplier="1:1" id="faE-bf-uKZ"/>
                                                 </constraints>
@@ -840,7 +840,7 @@
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qCO-r5-5gJ" secondAttribute="trailing" constant="16" id="Gbp-bV-5rP"/>
                                             <constraint firstAttribute="trailing" secondItem="NuI-L9-k0w" secondAttribute="trailing" constant="24" id="KWe-y9-Y0s"/>
                                             <constraint firstItem="hrd-6O-Qrk" firstAttribute="top" secondItem="7PG-XW-9eg" secondAttribute="bottom" constant="2" id="OqM-Vs-vKp"/>
-                                            <constraint firstItem="qCO-r5-5gJ" firstAttribute="centerY" secondItem="8EF-xq-sbP" secondAttribute="centerY" multiplier="0.45" id="Qus-ue-cuM"/>
+                                            <constraint firstItem="qCO-r5-5gJ" firstAttribute="centerY" secondItem="8EF-xq-sbP" secondAttribute="centerY" multiplier="0.3" id="Qus-ue-cuM"/>
                                             <constraint firstAttribute="trailing" secondItem="TdH-wg-CB1" secondAttribute="trailing" constant="24" id="RMH-G4-0og"/>
                                             <constraint firstItem="TdH-wg-CB1" firstAttribute="leading" secondItem="8EF-xq-sbP" secondAttribute="leading" constant="24" id="Rh8-nZ-tXt"/>
                                             <constraint firstItem="uyr-vh-qZp" firstAttribute="leading" secondItem="8EF-xq-sbP" secondAttribute="leading" constant="24" id="Xzx-99-wzp"/>
