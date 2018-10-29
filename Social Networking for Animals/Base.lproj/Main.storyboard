@@ -239,7 +239,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-b5-SeZ" userLabel="capture">
-                                <rect key="frame" x="0.0" y="597.5" width="375" height="20.5"/>
+                                <rect key="frame" x="0.0" y="597.5" width="375" height="69.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVA-Dp-YbF" userLabel="camera">
@@ -298,7 +298,6 @@
                     <connections>
                         <segue destination="mve-7M-WQe" kind="relationship" relationship="viewControllers" id="b0e-z9-X9b"/>
                         <segue destination="q5E-ni-rTk" kind="relationship" relationship="viewControllers" id="ZCE-yk-6U9"/>
-                        <segue destination="x1s-el-YGr" kind="relationship" relationship="viewControllers" id="Eds-We-4lK"/>
                         <segue destination="7hK-8Q-ABx" kind="relationship" relationship="viewControllers" id="fLh-IT-Mh6"/>
                         <segue destination="ftK-Ao-qwd" kind="relationship" relationship="viewControllers" id="7Wy-Xm-O9d"/>
                     </connections>
@@ -433,10 +432,61 @@
             </objects>
             <point key="canvasLocation" x="4210" y="1173"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="LUx-DX-RfM">
+            <objects>
+                <viewController storyboardIdentifier="preview" id="fEU-5P-mGC" customClass="PreviewViewController" customModule="Social_Networking_for_Animals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hL3-Hu-NZd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="84Y-Lk-ahk">
+                                <rect key="frame" x="0.0" y="60" width="375" height="240"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XrN-JF-3xe">
+                                <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XrN-JF-3xe" secondAttribute="height" multiplier="1:1" id="67s-nn-LEe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cachorro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzd-gJ-8Vw">
+                                <rect key="frame" x="52" y="27" width="52.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="84Y-Lk-ahk" firstAttribute="height" secondItem="hL3-Hu-NZd" secondAttribute="height" multiplier="0.8" id="Jhs-Jp-K6a"/>
+                            <constraint firstItem="zzd-gJ-8Vw" firstAttribute="leading" secondItem="XrN-JF-3xe" secondAttribute="trailing" constant="8" id="Kec-QS-mKE"/>
+                            <constraint firstItem="XrN-JF-3xe" firstAttribute="leading" secondItem="AMQ-TN-b1t" secondAttribute="leading" constant="8" id="Tbt-6Q-9SX"/>
+                            <constraint firstItem="AMQ-TN-b1t" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zzd-gJ-8Vw" secondAttribute="trailing" constant="16" id="Tsy-Ll-D6N"/>
+                            <constraint firstItem="AMQ-TN-b1t" firstAttribute="trailing" secondItem="84Y-Lk-ahk" secondAttribute="trailing" id="WAT-8g-vKO"/>
+                            <constraint firstItem="XrN-JF-3xe" firstAttribute="height" secondItem="hL3-Hu-NZd" secondAttribute="height" multiplier="0.12" id="bSF-pa-oCr"/>
+                            <constraint firstItem="XrN-JF-3xe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AMQ-TN-b1t" secondAttribute="top" constant="16" id="k9e-fU-JJ5"/>
+                            <constraint firstItem="84Y-Lk-ahk" firstAttribute="leading" secondItem="hL3-Hu-NZd" secondAttribute="leading" id="olt-47-sP2"/>
+                            <constraint firstItem="84Y-Lk-ahk" firstAttribute="top" secondItem="XrN-JF-3xe" secondAttribute="bottom" constant="8" id="rCL-Nd-720"/>
+                            <constraint firstItem="zzd-gJ-8Vw" firstAttribute="centerY" secondItem="XrN-JF-3xe" secondAttribute="centerY" id="uCD-9P-7tJ"/>
+                            <constraint firstItem="AMQ-TN-b1t" firstAttribute="bottom" secondItem="84Y-Lk-ahk" secondAttribute="bottom" id="zDv-Nz-fyc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AMQ-TN-b1t"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="300"/>
+                    <connections>
+                        <outlet property="imagePet" destination="XrN-JF-3xe" id="DGG-SY-Cg9"/>
+                        <outlet property="imagePost" destination="84Y-Lk-ahk" id="lPB-hv-UJt"/>
+                        <outlet property="petName" destination="zzd-gJ-8Vw" id="EwR-Dp-Lgv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KL0-x2-0va" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4333.6000000000004" y="1743.3283358320841"/>
+        </scene>
         <!--Details View Controller-->
         <scene sceneID="JVU-AP-3oP">
             <objects>
-                <viewController storyboardIdentifier="preview" id="aeV-ee-bqM" customClass="DetailsViewController" customModule="Social_Networking_for_Animals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="details" id="aeV-ee-bqM" customClass="DetailsViewController" customModule="Social_Networking_for_Animals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HnV-xs-OW0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -750,7 +800,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.86666666670000003" green="0.85098039219999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PJ0-Wr-uXq" secondAttribute="bottom" constant="16" id="1sX-yB-GXZ"/>
                                                             <constraint firstAttribute="width" secondItem="gdF-ud-nNS" secondAttribute="height" multiplier="1:1" id="4d8-k2-r27"/>
@@ -1073,6 +1123,6 @@
         <image name="user" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BH0-b2-NQe"/>
+        <segue reference="GMA-5O-eTH"/>
     </inferredMetricsTieBreakers>
 </document>

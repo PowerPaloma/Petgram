@@ -16,7 +16,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postView: UIView!
     @IBOutlet weak var likeView: UIView!
-    @IBOutlet weak var imageLike: UIImageView!
+    @IBOutlet weak var buttonLike: UIButton!
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var saveImage: UIImageView!

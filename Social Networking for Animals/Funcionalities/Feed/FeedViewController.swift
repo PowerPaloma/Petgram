@@ -28,6 +28,9 @@ class FeedViewController: UIViewController {
 //    }
     let minimumInteritemSpacing: CGFloat = 10
     let minimumLineSpacing:CGFloat = 10
+    var tapGestureLike: UITapGestureRecognizer? = nil
+    var tapGestureShare: UITapGestureRecognizer? = nil
+    var tapGestureSave: UITapGestureRecognizer? = nil
     
     
     override func viewDidLoad() {
@@ -38,14 +41,57 @@ class FeedViewController: UIViewController {
             guard let posts = result.objects as? [Post] else {return}
             self.posts = posts
         }
+//        tapGestureLike = UITapGestureRecognizer(target: self, action: #selector(likeTapped(tapGestureRecognizer:)))
+//        tapGestureShare = UITapGestureRecognizer(target: self, action: #selector(sharedTapped(tapGestureRecognizer:)))
+//        tapGestureSave = UITapGestureRecognizer(target: self, action: #selector(saveTapped(tapGestureRecognizer:)))
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "FeedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellFeed")
         collectionView.register(UINib(nibName: "LoadingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellLoading")
+        //collectionView.allowsSelection = false
 
         // Do any additional setup after loading the view.
     }
+    
+    @objc func buttonAction(sender: UIButton){
+        guard  let cell = collectionView.cellForItem(at: IndexPath(row: sender.tag, section: 0)) as? FeedCollectionViewCell else {return}
+        guard let image = UIImage(named: "heart-red") else {return}
+        cell.buttonLike.setImage(image, for: .normal)
+        let post = posts[sender.tag]
+        guard let user = self.user else {return}
+        post.addToLikers(user)
+        DataManager.saveContext()
+        guard let likeCount = post.likers?.count else {return}
+        cell.likeCount.text = "\(likeCount)"
+        
+       
+        
+    }
+//    @objc func likeTapped(tapGestureRecognizer: UITapGestureRecognizer)
+//    {
+//        guard  let row = tapGestureRecognizer.accessibilityLabel else {
+//            return
+//        }
+//        if let rowInt = Int(row) {
+//            guard let cell = collectionView.cellForItem(at: IndexPath(row: rowInt, section: 0)) as? FeedCollectionViewCell else {return}
+//            guard let image = UIImage(named: "heart-red") else {return}
+//            cell.imageLike.image = image
+//
+//        }
+//
+//
+//    }
+//    @objc func sharedTapped(tapGestureRecognizer: UITapGestureRecognizer)
+//    {
+//
+//
+//    }
+//    @objc func saveTapped(tapGestureRecognizer: UITapGestureRecognizer)
+//    {
+//
+//
+//    }
     
 
 }
@@ -77,7 +123,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
             if let imagePostPath = post.photo {
                 cell.postImage.image = StoreManager.loadImageFromPath(imagePostPath)
             }else{
-                if let imageDefault = UIImage(named: "image"){
+                if let imageDefault = UIImage(named: "Cat"){
                     cell.postImage.image = imageDefault
                 }
             }
@@ -90,6 +136,28 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
             if let imagePath = post.pet?.photo {
                 print(imagePath)
                 cell.imagePet.image = StoreManager.loadImageFromPath(imagePath)
+            }
+//            tapGestureLike?.accessibilityLabel = "\(indexPath.row)"
+//            cell.likeView.addGestureRecognizer(tapGestureLike!)
+//            cell.saveView.addGestureRecognizer(tapGestureSave!)
+//            cell.shareView.addGestureRecognizer(tapGestureShare!)
+            cell.buttonLike.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+            cell.buttonLike.tag = indexPath.row
+            guard let likers = post.likers?.allObjects as? [User] else {return cell}
+            let isLiked = likers.contains(where: { (user) -> Bool in
+                if user.username == self.user?.username{
+                    return true
+                }else{
+                    return false
+                }
+            })
+            if isLiked {
+                guard let image = UIImage(named: "heart-red") else {return cell}
+                cell.buttonLike.setImage(image, for: .normal)
+            }else{
+                guard let image = UIImage(named: "heart") else {return cell}
+                cell.buttonLike.setImage(image, for: .normal)
+                
             }
             return cell
             
@@ -129,7 +197,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
                             guard let pets = result.objects as? [Pet] else {return}
                             newPost.pet = pets.randomElement()
                             guard let imagePost = image else {
-                                guard let imageDefault = UIImage(named: "image") else{
+                                guard let imageDefault = UIImage(named: "Dog") else{
                                     newPost.photo = ""
                                     return
                                 }

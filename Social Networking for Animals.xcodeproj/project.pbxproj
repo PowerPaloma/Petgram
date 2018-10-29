@@ -20,6 +20,15 @@
 		2F2ADE152186255100BC635D /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE132186255100BC635D /* LoadingCollectionViewCell.swift */; };
 		2F2ADE162186255100BC635D /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ADE142186255100BC635D /* LoadingCollectionViewCell.xib */; };
 		2F2ADE182186C4B100BC635D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE172186C4B100BC635D /* DetailsViewController.swift */; };
+		2F2ADE1A2186D70500BC635D /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE192186D70500BC635D /* PreviewViewController.swift */; };
+		2F2ADE1D2186F00800BC635D /* SampleNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE1C2186F00800BC635D /* SampleNotificationDelegate.swift */; };
+		2F2ADE252186F13000BC635D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE242186F13000BC635D /* NotificationService.swift */; };
+		2F2ADE292186F13000BC635D /* Service.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F2ADE222186F13000BC635D /* Service.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F2ADE342186F37D00BC635D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADE332186F37D00BC635D /* UserNotifications.framework */; };
+		2F2ADE362186F37D00BC635D /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2ADE352186F37D00BC635D /* UserNotificationsUI.framework */; };
+		2F2ADE392186F37D00BC635D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ADE382186F37D00BC635D /* NotificationViewController.swift */; };
+		2F2ADE3C2186F37E00BC635D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ADE3A2186F37E00BC635D /* MainInterface.storyboard */; };
+		2F2ADE402186F37E00BC635D /* Content.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F2ADE322186F37D00BC635D /* Content.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC69217DF08E00CA1164 /* APIManager.swift */; };
 		2F36AC6C217DF0E600CA1164 /* Estruturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36AC6B217DF0E600CA1164 /* Estruturas.swift */; };
 		2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EB09217757AB00B62E3E /* AppDelegate.swift */; };
@@ -46,6 +55,38 @@
 		2FB3122A217F976C0004F9A4 /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB31229217F976C0004F9A4 /* RegisterAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2F2ADE272186F13000BC635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F54EAFE217757AB00B62E3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F2ADE212186F13000BC635D;
+			remoteInfo = Service;
+		};
+		2F2ADE3E2186F37E00BC635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F54EAFE217757AB00B62E3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F2ADE312186F37D00BC635D;
+			remoteInfo = Content;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F2ADE2D2186F13000BC635D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2F2ADE402186F37E00BC635D /* Content.appex in Embed App Extensions */,
+				2F2ADE292186F13000BC635D /* Service.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Networking for Animals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Networking for Animals/Pods-Social Networking for Animals.debug.xcconfig"; sourceTree = "<group>"; };
 		2F19AA74217FBBC30071C459 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
@@ -60,6 +101,18 @@
 		2F2ADE132186255100BC635D /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F2ADE142186255100BC635D /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F2ADE172186C4B100BC635D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		2F2ADE192186D70500BC635D /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		2F2ADE1B2186E02B00BC635D /* Social Networking for Animals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Social Networking for Animals.entitlements"; sourceTree = "<group>"; };
+		2F2ADE1C2186F00800BC635D /* SampleNotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNotificationDelegate.swift; sourceTree = "<group>"; };
+		2F2ADE222186F13000BC635D /* Service.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Service.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F2ADE242186F13000BC635D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		2F2ADE262186F13000BC635D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F2ADE322186F37D00BC635D /* Content.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Content.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F2ADE332186F37D00BC635D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		2F2ADE352186F37D00BC635D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		2F2ADE382186F37D00BC635D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		2F2ADE3B2186F37E00BC635D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2F2ADE3D2186F37E00BC635D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F36AC69217DF08E00CA1164 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2F36AC6B217DF0E600CA1164 /* Estruturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estruturas.swift; sourceTree = "<group>"; };
 		2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Networking for Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +144,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F2ADE1F2186F13000BC635D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F2ADE2F2186F37D00BC635D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F2ADE362186F37D00BC635D /* UserNotificationsUI.framework in Frameworks */,
+				2F2ADE342186F37D00BC635D /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F54EB03217757AB00B62E3E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,10 +171,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F2ADE232186F13000BC635D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2F2ADE242186F13000BC635D /* NotificationService.swift */,
+				2F2ADE262186F13000BC635D /* Info.plist */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2F2ADE372186F37D00BC635D /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				2F2ADE382186F37D00BC635D /* NotificationViewController.swift */,
+				2F2ADE3A2186F37E00BC635D /* MainInterface.storyboard */,
+				2F2ADE3D2186F37E00BC635D /* Info.plist */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		2F54EAFD217757AB00B62E3E = {
 			isa = PBXGroup;
 			children = (
 				2F54EB08217757AB00B62E3E /* Social Networking for Animals */,
+				2F2ADE232186F13000BC635D /* Service */,
+				2F2ADE372186F37D00BC635D /* Content */,
 				2F54EB07217757AB00B62E3E /* Products */,
 				F0A95C5945C2F997A6027313 /* Pods */,
 				582280BB83A83E5DF2B2A49E /* Frameworks */,
@@ -116,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				2F54EB06217757AB00B62E3E /* Social Networking for Animals.app */,
+				2F2ADE222186F13000BC635D /* Service.appex */,
+				2F2ADE322186F37D00BC635D /* Content.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +215,7 @@
 		2F54EB08217757AB00B62E3E /* Social Networking for Animals */ = {
 			isa = PBXGroup;
 			children = (
+				2F2ADE1B2186E02B00BC635D /* Social Networking for Animals.entitlements */,
 				2F54EB20217757FD00B62E3E /* Tables and Collections Controllers */,
 				2F54EB1F217757EC00B62E3E /* Funcionalities */,
 				2F54EB1E217757D700B62E3E /* Model */,
@@ -148,6 +241,7 @@
 				2FB31227217F959C0004F9A4 /* RegisterManager.swift */,
 				2F19AA74217FBBC30071C459 /* StoreManager.swift */,
 				2F2ADE112185DC9200BC635D /* PostManager.swift */,
+				2F2ADE1C2186F00800BC635D /* SampleNotificationDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +315,7 @@
 				2FB3121B217E5B6E0004F9A4 /* BottonCollectionViewCell.swift */,
 				2FB3121C217E5B6E0004F9A4 /* BottonCollectionViewCell.xib */,
 				2F2ADE172186C4B100BC635D /* DetailsViewController.swift */,
+				2F2ADE192186D70500BC635D /* PreviewViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -248,6 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				C880E62E4485305FCB618306 /* Pods_Social_Networking_for_Animals.framework */,
+				2F2ADE332186F37D00BC635D /* UserNotifications.framework */,
+				2F2ADE352186F37D00BC635D /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,6 +361,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F2ADE212186F13000BC635D /* Service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F2ADE2A2186F13000BC635D /* Build configuration list for PBXNativeTarget "Service" */;
+			buildPhases = (
+				2F2ADE1E2186F13000BC635D /* Sources */,
+				2F2ADE1F2186F13000BC635D /* Frameworks */,
+				2F2ADE202186F13000BC635D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Service;
+			productName = Service;
+			productReference = 2F2ADE222186F13000BC635D /* Service.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2F2ADE312186F37D00BC635D /* Content */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F2ADE412186F37E00BC635D /* Build configuration list for PBXNativeTarget "Content" */;
+			buildPhases = (
+				2F2ADE2E2186F37D00BC635D /* Sources */,
+				2F2ADE2F2186F37D00BC635D /* Frameworks */,
+				2F2ADE302186F37D00BC635D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Content;
+			productName = Content;
+			productReference = 2F2ADE322186F37D00BC635D /* Content.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2F54EB05217757AB00B62E3E /* Social Networking for Animals */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F54EB1B217757AE00B62E3E /* Build configuration list for PBXNativeTarget "Social Networking for Animals" */;
@@ -273,10 +404,13 @@
 				2F54EB03217757AB00B62E3E /* Frameworks */,
 				2F54EB04217757AB00B62E3E /* Resources */,
 				41EF3F2F3A7C695BE4C459B6 /* [CP] Embed Pods Frameworks */,
+				2F2ADE2D2186F13000BC635D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2F2ADE282186F13000BC635D /* PBXTargetDependency */,
+				2F2ADE3F2186F37E00BC635D /* PBXTargetDependency */,
 			);
 			name = "Social Networking for Animals";
 			productName = "Social Networking for Animals";
@@ -293,8 +427,19 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Paloma Bispo";
 				TargetAttributes = {
+					2F2ADE212186F13000BC635D = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					2F2ADE312186F37D00BC635D = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					2F54EB05217757AB00B62E3E = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -312,11 +457,28 @@
 			projectRoot = "";
 			targets = (
 				2F54EB05217757AB00B62E3E /* Social Networking for Animals */,
+				2F2ADE212186F13000BC635D /* Service */,
+				2F2ADE312186F37D00BC635D /* Content */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F2ADE202186F13000BC635D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F2ADE302186F37D00BC635D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F2ADE3C2186F37E00BC635D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F54EB04217757AB00B62E3E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,6 +550,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F2ADE1E2186F13000BC635D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F2ADE252186F13000BC635D /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F2ADE2E2186F37D00BC635D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F2ADE392186F37D00BC635D /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F54EB02217757AB00B62E3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +576,7 @@
 				2FB31224217F93F60004F9A4 /* LoginManager.swift in Sources */,
 				2FB3121A217E53820004F9A4 /* BottomCollection.swift in Sources */,
 				2F54EB3221792B9400B62E3E /* TopShelfCollectionViewCell.swift in Sources */,
+				2F2ADE1A2186D70500BC635D /* PreviewViewController.swift in Sources */,
 				2F36AC6A217DF08E00CA1164 /* APIManager.swift in Sources */,
 				2F2ADE152186255100BC635D /* LoadingCollectionViewCell.swift in Sources */,
 				2F2ADE122185DC9200BC635D /* PostManager.swift in Sources */,
@@ -413,6 +592,7 @@
 				2FB31226217F94610004F9A4 /* DataManager.swift in Sources */,
 				2F54EB0A217757AB00B62E3E /* AppDelegate.swift in Sources */,
 				2F19AA772180DA880071C459 /* FeedViewController.swift in Sources */,
+				2F2ADE1D2186F00800BC635D /* SampleNotificationDelegate.swift in Sources */,
 				2F54EB26217772B200B62E3E /* LoginViewController.swift in Sources */,
 				2F54EB2F2178B06B00B62E3E /* CameraHanndler.swift in Sources */,
 				2F54EB23217762E900B62E3E /* IntroViewController.swift in Sources */,
@@ -425,7 +605,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2F2ADE282186F13000BC635D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F2ADE212186F13000BC635D /* Service */;
+			targetProxy = 2F2ADE272186F13000BC635D /* PBXContainerItemProxy */;
+		};
+		2F2ADE3F2186F37E00BC635D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F2ADE312186F37D00BC635D /* Content */;
+			targetProxy = 2F2ADE3E2186F37E00BC635D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		2F2ADE3A2186F37E00BC635D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F2ADE3B2186F37E00BC635D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		2F54EB0D217757AB00B62E3E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -445,6 +646,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2F2ADE2B2186F13000BC635D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				INFOPLIST_FILE = Service/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Social-Networking-for-Animals.Service";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F2ADE2C2186F13000BC635D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				INFOPLIST_FILE = Service/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Social-Networking-for-Animals.Service";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2F2ADE422186F37E00BC635D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				INFOPLIST_FILE = Content/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Social-Networking-for-Animals.Content";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F2ADE432186F37E00BC635D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				INFOPLIST_FILE = Content/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Social-Networking-for-Animals.Content";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2F54EB19217757AE00B62E3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,11 +842,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 121BB5E8ED84D0493F2A01F7 /* Pods-Social Networking for Animals.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Social Networking for Animals/Social Networking for Animals.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ922JMCL6;
 				INFOPLIST_FILE = "Social Networking for Animals/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,11 +864,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44CF88BAB41A6A7437799F09 /* Pods-Social Networking for Animals.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Social Networking for Animals/Social Networking for Animals.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ922JMCL6;
 				INFOPLIST_FILE = "Social Networking for Animals/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,6 +885,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F2ADE2A2186F13000BC635D /* Build configuration list for PBXNativeTarget "Service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F2ADE2B2186F13000BC635D /* Debug */,
+				2F2ADE2C2186F13000BC635D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F2ADE412186F37E00BC635D /* Build configuration list for PBXNativeTarget "Content" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F2ADE422186F37E00BC635D /* Debug */,
+				2F2ADE432186F37E00BC635D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2F54EB01217757AB00B62E3E /* Build configuration list for PBXProject "Social Networking for Animals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

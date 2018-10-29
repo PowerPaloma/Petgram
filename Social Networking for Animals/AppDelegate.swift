@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import FBSDKCoreKit
+import UserNotifications
 
 var animals: [Animal] = []
 //let resourcesAnimals = [APIManager.getRandonCat, APIManager.getRandonDog, APIManager.getRandonFox]
@@ -17,7 +18,7 @@ var animals: [Animal] = []
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+    let notificationDelegate = SampleNotificationDelegate()
     
 
 
@@ -26,7 +27,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         loadResouces()
         setupCoreData()
+        registerForPushNotifications()
+        
         return true
+    }
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            UNUserNotificationCenter.current().delegate = self.notificationDelegate
+            let openAction = UNNotificationAction(identifier: "OpenNotification", title: NSLocalizedString("Abrir", comment: ""), options: UNNotificationActionOptions.foreground)
+            let deafultCategory = UNNotificationCategory(identifier: "CustomSamplePush", actions: [openAction], intentIdentifiers: [], options: [])
+            UNUserNotificationCenter.current().setNotificationCategories(Set([deafultCategory]))
+            print("Permission granted: \(granted)")
+            
+            guard granted else { return }
+            self.getNotificationSettings()
+        }
+    }
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+            
+        }
+    }
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+    }
+    
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
     }
     
   
@@ -56,14 +97,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pet1.owner = user1
         pet1.type = "Cachorro"
         pet1.name = "Max"
-        pet1.photo = "/Images/Petgram4327199600.jpeg"
-//        let pet2 = Pet(context: DataManager.getContext())
-//        pet2.followersCount = 100
-//        pet2.likeCount = 200
-//        pet2.photoCount = 30
-//        pet2.owner = user1
-//        pet2.type = "Gato"
-//        pet2.name = "Margot"
+        guard let image = UIImage(named: "Dog") else {return}
+        pet1.photo = StoreManager.saving(image: image, withName: "\(image.hashValue)")
+        
+        let pet2 = Pet(context: DataManager.getContext())
+        pet2.followersCount = 100
+        pet2.likeCount = 200
+        pet2.photoCount = 30
+        pet2.owner = user1
+        pet2.type = "Gato"
+        pet2.name = "Margot"
+        guard let imageCat = UIImage(named: "Fox") else {return}
+        pet1.photo = StoreManager.saving(image: imageCat, withName: "\(imageCat.hashValue)")
 //        let pet3 = Pet(context: DataManager.getContext())
 //        pet3.followersCount = 5
 //        pet3.likeCount = 7
@@ -102,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //dispatch.enter()
             APIManager.getRandonAnimal { (error, image) in
                 if !(error == nil){
-                    print("error in saving post")
+                   // print("error in saving post")
                     return
                 }else{
                     let newPost = Post(context: DataManager.getContext())
@@ -112,7 +157,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         guard let pets = result.objects as? [Pet] else {return}
                         newPost.pet = pets.randomElement()
                         guard let imagePost = image else {
-                            guard let imageDefault = UIImage(named: "image") else{
+                            guard let imageDefault = UIImage(named: "Fox") else{
                                 newPost.photo = ""
                                 return
                             }
@@ -179,6 +224,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
 
 
 

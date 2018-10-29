@@ -147,12 +147,12 @@ class AddPetViewController: UIViewController {
                     DataManager.saveContext()
                     return
                 }
-                newPet.photo = StoreManager.saving(image: imagePlaceholder, withName: "petPhoto")
+                newPet.photo = StoreManager.saving(image: imagePlaceholder, withName: "\(imagePlaceholder.hashValue)")
                 DataManager.saveContext()
                 return
                 
             }
-             newPet.photo = StoreManager.saving(image: photoPet , withName: self.pickedImageName ?? "petPhoto")
+             newPet.photo = StoreManager.saving(image: photoPet , withName: self.pickedImageName ?? "\(photoPet.hashValue)")
             DataManager.saveContext()
             self.dismiss(animated: true, completion: nil)
         }

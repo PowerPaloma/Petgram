@@ -64,20 +64,25 @@ extension SearchViewController: UIViewControllerPreviewingDelegate{
         guard let cell = collectionViewBottom.cellForItem(at: indexPath) else { return nil}
         let post = posts[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let previewController = storyboard.instantiateViewController(withIdentifier: "preview") as? DetailsViewController else {return nil}
+        guard let previewController = storyboard.instantiateViewController(withIdentifier: "preview") as? PreviewViewController else {return nil}
         previewController.post = post
-        previewController.preferredContentSize = CGSize(width: 0.0, height: 400)
+        previewController.preferredContentSize = CGSize(width: 0.0, height: 300)
         previewingContext.sourceRect = cell.frame
         return previewController
         
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
-        show(viewControllerToCommit, sender: self)
+        guard let previewController = viewControllerToCommit as? PreviewViewController else {return}
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let final = storyboard.instantiateViewController(withIdentifier: "details") as? DetailsViewController else {return}
+        final.post = previewController.post
+        show(final, sender: self)
         
     }
     
     
 }
+
+
 
