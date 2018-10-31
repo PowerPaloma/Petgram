@@ -8,6 +8,8 @@
 
 import UserNotifications
 
+
+
 class NotificationService: UNNotificationServiceExtension {
 
     var contentHandler: ((UNNotificationContent) -> Void)?
@@ -18,12 +20,52 @@ class NotificationService: UNNotificationServiceExtension {
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
         if let bestAttemptContent = bestAttemptContent {
-            // Modify the notification content here...
-            bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
-            
-            contentHandler(bestAttemptContent)
-        }
+            bestAttemptContent.title = "Nova publicação"
+            bestAttemptContent.body = "Voce foi marcado em uma nova publicação"
+            bestAttemptContent.categoryIdentifier = "newCategory"
+            bestAttemptContent.sound = UNNotificationSound.default
+            if let url = Bundle.main.url(forResource: "push",
+                                         withExtension: "jpg") {
+                
+                if let attachment = try? UNNotificationAttachment(identifier:
+                    UUID().uuidString, url: url, options: nil) {
+                    self.bestAttemptContent?.attachments = [attachment]
+                    self.contentHandler!(self.bestAttemptContent!)
+                }
+            }
+//            APIManager.getRandonAnimal { (error, image) in
+//                if !(error == nil){
+//                    print("ERROR")
+//                    self.contentHandler!(self.bestAttemptContent!)
+//                }else{
+//                    if let image = image {
+//
+//                        let imagePath = StoreManager.saving(image: image, withName: "\(image.hashValue)")
+////
+//                        guard let urlString = image.accessibilityIdentifier, let fileUrl = URL(string: urlString) else{
+//                            self.contentHandler!(self.bestAttemptContent!)
+//                            return
+//                        }
+//
+//                        let tmpDirectory = NSTemporaryDirectory()
+//                        let tmpFile = "file://".appending(tmpDirectory).appending(fileUrl.lastPathComponent)
+//                        let tmpUrl = URL(string: tmpFile)!
+//
+//
+//                        do{
+//                            let attachment = try UNNotificationAttachment(identifier: "", url: tmpUrl, options: nil)
+//                            self.bestAttemptContent?.attachments = [attachment]
+//                            self.contentHandler!(self.bestAttemptContent!)
+//                        }catch let ee{
+//                            print(ee.localizedDescription)
+//                            self.contentHandler!(self.bestAttemptContent!)
+//                        }
+////
+//                }
+//            }
+//        }
     }
+}
     
     override func serviceExtensionTimeWillExpire() {
         // Called just before the extension will be terminated by the system.

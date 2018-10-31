@@ -20,13 +20,15 @@ class PreviewViewController: UIViewController {
 
         
         if let post = self.post {
+            guard let imagePost = post.photo else {return}
+            self.imagePost.image = StoreManager.loadImageFromPath(imagePost)
+            self.petName.text = post.pet?.name
             guard let imagePet = post.pet?.photo else {return}
             self.imagePet.image = StoreManager.loadImageFromPath(imagePet)
             self.imagePet.clipsToBounds = true
             self.imagePet.layer.cornerRadius = self.imagePet.frame.width/2
-            guard let imagePost = post.photo else {return}
-            self.imagePost.image = StoreManager.loadImageFromPath(imagePost)
-            self.petName.text = post.pet?.name
+            
+            
         }
 
         // Do any additional setup after loading the view.

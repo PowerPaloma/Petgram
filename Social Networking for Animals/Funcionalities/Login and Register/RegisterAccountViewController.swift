@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class RegisterAccountViewController: UIViewController {
     
 
+      @IBOutlet weak var btnFBLogin: FBSDKLoginButton!
     @IBOutlet weak var password: DesignableUITextField!
     @IBOutlet weak var username: DesignableUITextField!
     @IBOutlet weak var email: DesignableUITextField!
@@ -22,7 +24,6 @@ class RegisterAccountViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     var tapGestureRecognizer: UITapGestureRecognizer? = nil
     var pickedImageName: String?
-    var transferProtocol: TransferData? = nil
     var newUser: User?
     
     override func viewDidLoad() {
@@ -37,6 +38,7 @@ class RegisterAccountViewController: UIViewController {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         
         image.addGestureRecognizer(tapGestureRecognizer!)
+         btnFBLogin.readPermissions = ["public_profile", "email"]
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,6 +59,8 @@ class RegisterAccountViewController: UIViewController {
     func setupLayout(){
         singupButton.clipsToBounds = true
         singupButton.layer.cornerRadius = 22
+        btnFBLogin.clipsToBounds = true
+        btnFBLogin.layer.cornerRadius = 22
         
     }
     

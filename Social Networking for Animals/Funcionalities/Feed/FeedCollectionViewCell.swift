@@ -15,15 +15,15 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postView: UIView!
-    @IBOutlet weak var likeView: UIView!
+    @IBOutlet weak var likeView: GradientView!
     @IBOutlet weak var buttonLike: UIButton!
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var saveView: UIView!
-    @IBOutlet weak var saveImage: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareView: UIView!
-    @IBOutlet weak var shareImage: UIImageView!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var comentView: UIView!
-    @IBOutlet weak var comentImage: UIImageView!
+    @IBOutlet weak var comentButton: UIButton!
     
     
     override func awakeFromNib() {
@@ -37,10 +37,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
         imagePet.layer.cornerRadius = imagePet.frame.width/2
         imagePet.contentMode = .scaleAspectFill
         likeView.layer.cornerRadius = likeView.frame.width/2
+        likeView.clipsToBounds = true
         comentView.layer.cornerRadius = comentView.frame.width/2
         shareView.layer.cornerRadius = shareView.frame.width/2
         saveView.layer.cornerRadius = saveView.frame.width/2
+       
         
+
+     
     }
 
 }

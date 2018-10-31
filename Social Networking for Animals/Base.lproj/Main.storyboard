@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -122,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1577" y="-1124"/>
         </scene>
-        <!--Login View Controller-->
+        <!--View Controller-->
         <scene sceneID="czs-ny-k14">
             <objects>
-                <viewController id="jL0-8h-cQp" customClass="LoginViewController" customModule="Social_Networking_for_Animals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jL0-8h-cQp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hpS-8U-SGb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -440,7 +439,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="84Y-Lk-ahk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="240" translatesAutoresizingMaskIntoConstraints="NO" id="84Y-Lk-ahk">
                                 <rect key="frame" x="0.0" y="60" width="375" height="240"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XrN-JF-3xe">
@@ -953,7 +952,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyr-vh-qZp" userLabel="Close">
-                                                <rect key="frame" x="24" y="16" width="46" height="9"/>
+                                                <rect key="frame" x="24" y="16" width="46" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Close">
                                                     <color key="titleColor" red="0.3803921569" green="0.25490196079999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1019,13 +1018,13 @@
                                                     <action selector="singup:" destination="nMR-kP-q0p" eventType="touchUpInside" id="66h-tX-LjB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzf-h4-TSO">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzf-h4-TSO" customClass="FBSDKLoginButton">
                                                 <rect key="frame" x="24" y="571" width="327" height="52"/>
                                                 <color key="backgroundColor" red="1" green="0.87407993719999999" blue="0.91550147439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="qCO-r5-5gJ">
-                                                <rect key="frame" x="131.5" y="41" width="112.5" height="112.5"/>
+                                                <rect key="frame" x="131.5" y="83" width="112.5" height="112.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qCO-r5-5gJ" secondAttribute="height" multiplier="1:1" id="faE-bf-uKZ"/>
                                                 </constraints>
@@ -1053,7 +1052,7 @@
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qCO-r5-5gJ" secondAttribute="trailing" constant="16" id="Gbp-bV-5rP"/>
                                             <constraint firstAttribute="trailing" secondItem="NuI-L9-k0w" secondAttribute="trailing" constant="24" id="KWe-y9-Y0s"/>
                                             <constraint firstItem="hrd-6O-Qrk" firstAttribute="top" secondItem="7PG-XW-9eg" secondAttribute="bottom" constant="2" id="OqM-Vs-vKp"/>
-                                            <constraint firstItem="qCO-r5-5gJ" firstAttribute="centerY" secondItem="8EF-xq-sbP" secondAttribute="centerY" multiplier="0.3" id="Qus-ue-cuM"/>
+                                            <constraint firstItem="qCO-r5-5gJ" firstAttribute="centerY" secondItem="8EF-xq-sbP" secondAttribute="centerY" multiplier="0.43" id="Qus-ue-cuM"/>
                                             <constraint firstAttribute="trailing" secondItem="TdH-wg-CB1" secondAttribute="trailing" constant="24" id="RMH-G4-0og"/>
                                             <constraint firstItem="TdH-wg-CB1" firstAttribute="leading" secondItem="8EF-xq-sbP" secondAttribute="leading" constant="24" id="Rh8-nZ-tXt"/>
                                             <constraint firstItem="uyr-vh-qZp" firstAttribute="leading" secondItem="8EF-xq-sbP" secondAttribute="leading" constant="24" id="Xzx-99-wzp"/>
@@ -1097,6 +1096,7 @@
                         <viewLayoutGuide key="safeArea" id="KaN-eA-Mud"/>
                     </view>
                     <connections>
+                        <outlet property="btnFBLogin" destination="dzf-h4-TSO" id="gq9-nh-7Xp"/>
                         <outlet property="email" destination="7PG-XW-9eg" id="9G0-4v-Hy9"/>
                         <outlet property="image" destination="qCO-r5-5gJ" id="UIg-vE-n0j"/>
                         <outlet property="invalidEmail" destination="hrd-6O-Qrk" id="L2U-eJ-lij"/>
@@ -1123,6 +1123,6 @@
         <image name="user" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GMA-5O-eTH"/>
+        <segue reference="BH0-b2-NQe"/>
     </inferredMetricsTieBreakers>
 </document>

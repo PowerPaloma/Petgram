@@ -88,8 +88,5 @@ class JSONNull: Codable, Hashable {
 }
 
 
-protocol TransferData {
-    func transferUser(user: User)
-}
 
 

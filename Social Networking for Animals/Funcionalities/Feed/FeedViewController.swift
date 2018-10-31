@@ -54,20 +54,50 @@ class FeedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @objc func buttonAction(sender: UIButton){
+    @objc func saveAction(sender: UIButton){
+    }
+    @objc func shareAction(sender: UIButton){
+    }
+    @objc func commentAction(sender: UIButton){
+    }
+    
+    @objc func likeAction(sender: UIButton){
         guard  let cell = collectionView.cellForItem(at: IndexPath(row: sender.tag, section: 0)) as? FeedCollectionViewCell else {return}
-        guard let image = UIImage(named: "heart-red") else {return}
-        cell.buttonLike.setImage(image, for: .normal)
         let post = posts[sender.tag]
-        guard let user = self.user else {return}
-        post.addToLikers(user)
-        DataManager.saveContext()
-        guard let likeCount = post.likers?.count else {return}
-        cell.likeCount.text = "\(likeCount)"
+        if isLikerOf(post: post) {
+            guard let image = UIImage(named: "heart") else {return}
+            cell.buttonLike.setImage(image, for: .normal)
+            guard let user = self.user else {return}
+            post.removeFromLikers(user)
+            DataManager.saveContext()
+            guard let likeCount = post.likers?.count else {return}
+            cell.likeCount.text = "\(likeCount)"
+        }else{
+            guard let image = UIImage(named: "heart-red") else {return}
+            cell.buttonLike.setImage(image, for: .normal)
+            guard let user = self.user else {return}
+            post.addToLikers(user)
+            DataManager.saveContext()
+            guard let likeCount = post.likers?.count else {return}
+            cell.likeCount.text = "\(likeCount)"
+        }
+        
         
        
         
     }
+    func isLikerOf(post: Post) -> Bool{
+        guard let likers = post.likers?.allObjects as? [User] else {return false}
+        let isLiked = likers.contains(where: { (user) -> Bool in
+            if user.username == self.user?.username{
+                return true
+            }else{
+                return false
+            }
+        })
+        return isLiked
+    }
+    
 //    @objc func likeTapped(tapGestureRecognizer: UITapGestureRecognizer)
 //    {
 //        guard  let row = tapGestureRecognizer.accessibilityLabel else {
@@ -141,17 +171,12 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //            cell.likeView.addGestureRecognizer(tapGestureLike!)
 //            cell.saveView.addGestureRecognizer(tapGestureSave!)
 //            cell.shareView.addGestureRecognizer(tapGestureShare!)
-            cell.buttonLike.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+            cell.buttonLike.addTarget(self, action: #selector(likeAction(sender:)), for: .touchUpInside)
+            cell.saveButton.addTarget(self, action: #selector(saveAction(sender:)), for: .touchUpInside)
+            cell.comentButton.addTarget(self, action: #selector(commentAction(sender:)), for: .touchUpInside)
+            cell.shareButton.addTarget(self, action: #selector(shareAction(sender:)), for: .touchUpInside)
             cell.buttonLike.tag = indexPath.row
-            guard let likers = post.likers?.allObjects as? [User] else {return cell}
-            let isLiked = likers.contains(where: { (user) -> Bool in
-                if user.username == self.user?.username{
-                    return true
-                }else{
-                    return false
-                }
-            })
-            if isLiked {
+            if isLikerOf(post: post) {
                 guard let image = UIImage(named: "heart-red") else {return cell}
                 cell.buttonLike.setImage(image, for: .normal)
             }else{
@@ -245,11 +270,24 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension UIView {
     
-    func addGradient(colorTop: CGColor, colorBotton: CGColor){
-        let gradient = CAGradientLayer()
-        gradient.frame = self.bounds
-        gradient.colors = [colorTop, colorBotton]
-        self.layer.addSublayer(gradient)
+    func dropShadow() {
+        let containerView = UIView()
+        let cornerRadius: CGFloat = 6.0
+        
+        // set the shadow of the view's layer
+        layer.backgroundColor = UIColor.clear.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        layer.shadowOpacity = 0.2
+        layer.shadowRadius = 4.0
+        
+        // set the cornerRadius of the containerView's layer
+        containerView.layer.cornerRadius = cornerRadius
+        containerView.layer.masksToBounds = true
+        
+        addSubview(containerView)
+        
+       
     }
 }
 

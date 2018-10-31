@@ -36,9 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
             (granted, error) in
             UNUserNotificationCenter.current().delegate = self.notificationDelegate
+            
             let openAction = UNNotificationAction(identifier: "OpenNotification", title: NSLocalizedString("Abrir", comment: ""), options: UNNotificationActionOptions.foreground)
-            let deafultCategory = UNNotificationCategory(identifier: "CustomSamplePush", actions: [openAction], intentIdentifiers: [], options: [])
+            
+            let deafultCategory = UNNotificationCategory(identifier: "newCategory", actions: [openAction], intentIdentifiers: [], options: [])
+            
             UNUserNotificationCenter.current().setNotificationCategories(Set([deafultCategory]))
+            
             print("Permission granted: \(granted)")
             
             guard granted else { return }
@@ -107,7 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pet2.owner = user1
         pet2.type = "Gato"
         pet2.name = "Margot"
-        guard let imageCat = UIImage(named: "Fox") else {return}
+        guard let imageCat = UIImage(named: "Cat") else {return}
         pet1.photo = StoreManager.saving(image: imageCat, withName: "\(imageCat.hashValue)")
 //        let pet3 = Pet(context: DataManager.getContext())
 //        pet3.followersCount = 5
@@ -147,7 +151,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //dispatch.enter()
             APIManager.getRandonAnimal { (error, image) in
                 if !(error == nil){
-                   // print("error in saving post")
+                    let newPost = Post(context: DataManager.getContext())
+                    guard let entity = DataManager.getEntity(entity: "Pet") else {return}
+                    let result = DataManager.getAll(entity: entity)
+                    if result.success {
+                        guard let pets = result.objects as? [Pet] else {return}
+                        newPost.pet = pets.randomElement()
+                        
+                        guard let imageDefault = UIImage(named: "Fox") else{
+                            newPost.photo = ""
+                            return
+                        }
+                        newPost.photo = StoreManager.saving(image: imageDefault, withName: "\(imageDefault.hashValue)")
+                        DataManager.saveContext()
+                    }
                     return
                 }else{
                     let newPost = Post(context: DataManager.getContext())
@@ -165,7 +182,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             return
                         }
                         newPost.photo = StoreManager.saving(image: imagePost, withName: "\(imagePost.hashValue)")
-                        print("testing")
                         DataManager.saveContext()
                     }
 

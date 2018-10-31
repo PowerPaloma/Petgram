@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var scView: UIScrollView!
     @IBOutlet weak var getStartedButton: UIButton!
-    @IBOutlet weak var btnFBLogin: FBSDKLoginButton!
+  
     @IBOutlet weak var password: DesignableUITextField!
     @IBOutlet weak var username: DesignableUITextField!
     
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         observeKeyboardNotifications()
 //        btnFBLogin.delegate = self
 //
-//        btnFBLogin.readPermissions = ["public_profile", "email"]
+//       
     }
     override func viewWillAppear(_ animated: Bool) {
 //        print("willappear")

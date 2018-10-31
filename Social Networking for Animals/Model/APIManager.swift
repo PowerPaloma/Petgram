@@ -81,6 +81,7 @@ class APIManager: NSObject {
                         return
                     }
                     DispatchQueue.main.async {
+                        image.accessibilityIdentifier = imageURL
                         completion(nil, image)
                     }
                 })
@@ -123,6 +124,7 @@ class APIManager: NSObject {
                         return
                     }
                     DispatchQueue.main.async {
+                        image.accessibilityIdentifier = imageURL
                         completion(nil, image)
                     }
                 })
@@ -164,6 +166,7 @@ class APIManager: NSObject {
                         return
                     }
                     DispatchQueue.main.async {
+                        image.accessibilityIdentifier = imageURL
                         completion(nil, image)
                     }
                 })
