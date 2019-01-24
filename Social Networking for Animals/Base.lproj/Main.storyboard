@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-di-N1u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-di-N1u">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1096,7 +1096,6 @@
                         <viewLayoutGuide key="safeArea" id="KaN-eA-Mud"/>
                     </view>
                     <connections>
-                        <outlet property="btnFBLogin" destination="dzf-h4-TSO" id="gq9-nh-7Xp"/>
                         <outlet property="email" destination="7PG-XW-9eg" id="9G0-4v-Hy9"/>
                         <outlet property="image" destination="qCO-r5-5gJ" id="UIg-vE-n0j"/>
                         <outlet property="invalidEmail" destination="hrd-6O-Qrk" id="L2U-eJ-lij"/>

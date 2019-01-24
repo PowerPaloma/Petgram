@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import FBSDKCoreKit
+//import FBSDKCoreKit
 import UserNotifications
 
 var animals: [Animal] = []
@@ -202,14 +202,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        let handled = FBSDKApplicationDelegate.sharedInstance()?.application(app, open: url, options: options)
-        
-    
-        guard let handledReturn = handled else {return false}
-        return handledReturn
-    }
+
     
 
     
